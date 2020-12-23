@@ -1,0 +1,261 @@
+
+/*
+div[class^="col-"] {
+  background: #feca57;
+  height: 100px;
+  border: 1px solid white;
+} */
+
+
+body{
+  font-family: Didot;
+  background-image: url("../img/fondonegro4.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #000000;
+}
+
+#resaltar{
+  color: orange;
+}
+
+#resaltar2{
+  color: rgb(0, 179, 250);
+}
+
+nav .container-fluid .navbar-brand strong{
+  font-size: 35px;
+}
+nav .container-fluid .navbar-brand img{
+  width: 70px;
+  height: 70px;
+}
+
+section .container-fluid h1{
+  color: white;
+}
+
+section .container-fluid .row .col-12 h5 strong{
+  color: black;
+}
+section .container-fluid .row .col-12 h5{
+  color: #B0B0AD;
+}
+section .container-fluid .row .col-12 h5 a{
+  color: #B0B0AD;
+}
+
+/*----------------------index-------------------------*/
+/*carrosel de imagenes index*/
+#main .carousel-item img {
+  max-height: 70vh;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+
+#servicios .carousel-item img {
+  height: 40vh;
+  object-fit: cover;
+  filter: grayscale(20%);
+}
+  
+#carousel {
+  position: relative;
+}
+
+#carousel .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 1;
+}
+
+#carousel .overlay .container,
+#carousel .overlay .row {
+  height: 100%;
+}
+  
+.text-platzi{
+    color:#97c93e !important;
+}
+
+/*Proyectos en el index*/
+#titulo{
+  background-color: black;
+}
+
+#Proyectos .container-fluid .row img{
+  width:100%;
+  max-width:30vh;
+  height: 100%;
+  max-height:50vh;
+}
+
+#Proyectos .container-fluid .row figure{
+  position: relative;
+  display: inline-block;
+}
+
+figcaption {
+  display: none;
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  right: 1em;
+}
+
+#Proyectos .container-fluid .row figure:hover img{
+  /*-webkit-filter: grayscale(50%); /*blur(blue)*/
+  /*filter: grayscale(50%);*/
+  opacity: 0.8;
+  filter: alpha(opacity=1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  background-color: rgba(0,0,0,0.6);
+  /*border: 2px solid rgb(0, 255, 98);*/
+}
+
+#Proyectos .container-fluid .row figure:hover figcaption{
+  display: block;
+}
+
+/*Contacto index*/
+#contacto h1{
+  color: white;
+}
+#contacto h5 strong{
+  color: white;
+}
+#contacto label{
+  color: white;
+}
+
+/*---------------------Blog---------------------*/
+#contenido .container h1 {  
+  border-bottom: 1px solid rgb(85, 76, 27);
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+#contenido .container-fluid p{  
+  font-size: 40px;
+  color: white;
+}
+
+#contenido .container-fluid .row .col-12 p{  
+  font-size: 18px;
+  color: white;
+}
+
+#contenido .container h3 {  
+color: white;
+}
+
+
+#contenido .container-fluid p a{  
+  color: orange;
+}
+
+#contenido .container .row .col-12 .row .col-12 {  
+  color: white;
+
+}
+
+#contenido .container .row .col-12 .row .col-12 a {  
+  color: white;
+  
+}
+#contenido .container .row .col-12 .row .col-12 a:hover {  
+  color: rgb(167, 144, 15);
+  text-decoration:none;
+}
+#contenido .container .row .col-12 .row .col-12 a #palo{  
+  color: rgb(255, 217, 0);
+}
+
+#contenido .container .row #imagenizq:hover img{  
+  -webkit-transform:scale(1.5);
+  transform:scale(1.5);
+}
+#contenido .container .row #imagenizq img{  
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+#contenido .container .row #imagenizq{  
+  overflow:hidden;
+}
+
+
+/*-------------------proyectos-----------------------*/
+#main .carousel .carousel-item img {
+  height: 70vh;
+  object-fit: cover;
+  filter: grayscale(10%);
+}
+
+#contenido .container-fluid h3 {  
+  border-bottom: 1px solid rgb(85, 76, 27);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#contenido .container-fluid .badge{  
+  font-size: 25px;
+}
+
+#contenido .container-fluid p{  
+  font-size: 15px;
+    color: white;
+}
+
+#contenido .container-fluid button{  
+  font-size: 15px;
+}
+
+/*-------------------------comentarios----------------------*/
+
+#contenido .container-fluid .row .col-12 .row .col-12 .row select{  
+  display: inline; 
+  background-color: black; 
+  color: white;
+
+}
+
+
+
+/*-------------------------sobremi----------------------*/
+#sobremi {
+  text-align:center;
+  color: rgb(255, 217, 0);
+}
+
+
+
+/*-------------------------footer-----------------------*/
+#footer{
+  background: black;
+  color:white;
+}
+#footer:hover{
+  background: black;
+  color:white;
+}
+
+#footer a{
+  color:white;
+  font-size:10px;
+}
+
+#footer #icons{
+  font-size:7px;
+}
