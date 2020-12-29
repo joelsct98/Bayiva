@@ -195,6 +195,33 @@ color: white;
 }
 
 
+
+/*------------------comentariosGenerados------------------*/
+#usuario{
+  color: #97c93e;
+  font-size: 20px
+}
+
+#imagen-cambiante-tamaño2{
+  height: 25px;
+  width: 25px;
+}
+
+#imagen-cambiante {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  /*background: url(../../img/corazon.png) no-repeat;*/
+}
+
+
+#imagen-cambiante.cambio:hover {
+  opacity: 0;
+}
+
+
+
 /*-------------------proyectos-----------------------*/
 #main .carousel .carousel-item img {
   height: 70vh;
