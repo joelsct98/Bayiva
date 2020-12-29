@@ -190,17 +190,17 @@
                               <label for="commet" id="resaltar">Comentar como:</label>
                             </div>
                             <div class="col-8 text-left">
-                              <select id="identityMenu" name="commet" dir="ltr" onchange="BLOG_CMT_onSelectorChange()">
+                              <input type="text" id="identityMenu" list="lista_opciones" />
+
+                              <datalist id="lista_opciones" name="commet" dir="ltr">
                                 <option value="NONE" disabled="">Seleccionar perfil...</option>
-                                <option value="CURRENT">Cuenta de correo</option>
-                                <option value="NAMEURL">Nombre/URL</option>
-                                <option value="ANON">Anónimo</option>
-                              </select>                         
+                                <option value="Anónimo">Anónimo</option>
+                              </datalist>
                             </div>
                           </div>
                         </div>
                         <div class="col-4 text-right">
-                          <button type="button" id="Enviar" class="btn btn-warning">Muy Pronto!</button>
+                          <button type="button" id="Enviar" class="btn btn-warning" onclick="Enviar()">Muy Pronto!</button>
                         </div>
                       </div>
 
@@ -212,10 +212,10 @@
                           <div class="row" >
                             <div class="col-8">
                               <span id="usuario">Usuario</span> &nbsp;&nbsp;
-                              <span id="resaltar">22:00</span>
+                              <span id="hora">22:00</span>
                             </div>
                             <div class="col-4 text-right">
-                              <span id="resaltar">22/10/1998</span>
+                              <span id="fecha">22/10/1998</span>
                             </div>
 
                             <div class="col-12 mb-2">
@@ -229,14 +229,80 @@
                               <input type="image" style="height: 25px; width: 25px;" alt="Login"
                                      src="../../img/responder.png" onclick="Responder()">
 
-                              <!--sistema de me gustas-->
+                              <!--sistema de me Likes-->
                               <img src="../../img/corazonRojo.png" id="imagen-cambiante" onclick="Likes">
                               <img src="../../img/corazon.png" id="imagen-cambiante" class="cambio">
                               <div style="left: 70px; top: 1px;position: absolute" id="resaltar">85</div>
                             </div>
                             <div class="col-4 text-right">
                             </div>
-                          </div>
+
+                            <div class="col-12">
+                              <a >
+                                <div class="row">
+                                  <div class="col-4">
+                                    <div class="row">
+                                      <div class="col-4 text-right" onclick="RespuestaGenerar()">
+                                        <img src="../../img/flechabaja.png" style="height: 25px; width: 25px;"
+                                             id="imagen-cambiante" >
+                                      </div>
+                                      <div class="col-8" onclick="RespuestaGenerar()">
+                                        <span style="color: aquamarine; right: 25px">Ver Respuestas</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-8 text-right">
+                                    <span style="display:none;" id="botton_cierre_respuestas"
+                                          onclick="CerrarRespuestas()">Cerrar Respuestas</span>
+                                  </div>
+
+                                </div>
+                              </a>
+                            </div>
+                            <!--Respuestas Display: none-->
+                            <div id="resultado_respuestas" class="container" style="display:none;">
+
+                              <div class="row">
+                                <div class="col-2">
+                                </div>
+                                <div class="col-10">
+                                  <div class="row">
+                                    <div class="col-8">
+                                      <span id="usuario">Usuario</span> &nbsp;&nbsp;
+                                      <span id="hora">22:00</span>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                      <span id="fecha">22/10/1998</span>
+                                    </div>
+
+                                    <div class="col-12 mb-2">
+                                      <span style="color: white">
+                                        Es gracioso, estando en Platzi es dificil evitar picar aquí y hallá en los cursos.
+                                        Lo que es benéfico porque terminas sabiendo de todo un poco y se expanden tus horizontes.
+                                      </span>
+                                    </div>
+
+                                    <div class="col-8">
+                                      <input type="image" style="height: 25px; width: 25px;" alt="Login"
+                                             src="../../img/responder.png" onclick="Responder()">
+
+                                      <!--sistema de me Likes-->
+                                      <img src="../../img/corazonRojo.png" id="imagen-cambiante" onclick="Likes">
+                                      <img src="../../img/corazon.png" id="imagen-cambiante" class="cambio">
+                                      <div style="left: 70px; top: 1px;position: absolute" id="resaltar">85</div>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+                            </div>
+                            <!--Respuestas Display: none-->
+
+
 
                           <!--comentario Display: none-->
                           <div id="resultado_text" style="display:none;" class="mt-2">

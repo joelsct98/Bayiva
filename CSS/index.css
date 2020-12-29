@@ -199,7 +199,15 @@ color: white;
 /*------------------comentariosGenerados------------------*/
 #usuario{
   color: #97c93e;
-  font-size: 20px
+  font-size: 25px
+}
+#hora{
+  color: #2283F3;
+  font-size: 15px
+}
+#fecha{
+  color: #2283F3;
+  font-size: 15px
 }
 
 #imagen-cambiante-tamaño2{
@@ -220,8 +228,17 @@ color: white;
   opacity: 0;
 }
 
+#lista_opciones{
+  background-color: black;
+  color: white;
+  border-color: orange;
+}
 
-
+#identityMenu{
+  background-color: black;
+  color: white;
+  border-color: orange;
+}
 /*-------------------proyectos-----------------------*/
 #main .carousel .carousel-item img {
   height: 70vh;
