@@ -237,8 +237,57 @@
                             <div class="col-4 text-right">
                             </div>
 
-                            <div class="col-12">
-                              <a >
+                            <!--comentario Display: none-->
+                            <div id="resultado_text" style="display:none;" class="mt-2">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="row">
+                                    <div class="col-12">
+                                    <textarea class="form-control" style="background-color: black; color: white;"
+                                              placeholder="AUN NO FUNCIONA"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                      <div class="row mt-2">
+                                        <div class="col-8">
+                                          <div class="row">
+                                            <div class="col-4 text-left text-md-right text-lg-right">
+                                              <label for="commet" id="resaltar">Comentar como:</label>
+                                            </div>
+
+                                            <div class="col-8 text-left">
+                                              <select id="identityMenu" name="commet" dir="ltr" onchange="BLOG_CMT_onSelectorChange()">
+                                                <option value="NONE" disabled="">Seleccionar perfil...</option>
+                                                <option value="CURRENT">Cuenta de correo</option>
+                                                <option value="NAMEURL">Nombre/URL</option>
+                                                <option value="ANON">Anónimo</option>
+                                              </select>
+                                            </div>
+                                          </div>
+
+                                        </div>
+
+
+                                        <div class="col-4 text-right">
+                                          <button type="button" id="Enviar" class="btn btn-warning">Comentar</button>
+                                          <button type="button" id="Enviar" class="btn btn-warning" onclick="Cerrar()">Cerrar</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                              </div>
+
+
+
+                            </div>
+                            <!--comentario Display: none-->
+
+
+                            <!--Botones de accion del Display: none-->
+                            <div class="col-12" id="BotonesDisplay">
                                 <div class="row">
                                   <div class="col-4">
                                     <div class="row">
@@ -257,8 +306,10 @@
                                   </div>
 
                                 </div>
-                              </a>
                             </div>
+                            <!--Botones de accion del Display: none-->
+
+
                             <!--Respuestas Display: none-->
                             <div id="resultado_respuestas" class="container" style="display:none;">
 
@@ -302,55 +353,6 @@
                             </div>
                             <!--Respuestas Display: none-->
 
-
-
-                          <!--comentario Display: none-->
-                          <div id="resultado_text" style="display:none;" class="mt-2">
-                            <div class="row">
-                              <div class="col-12">
-                                <div class="row">
-                                  <div class="col-12">
-                                    <textarea class="form-control" style="background-color: black; color: white;"
-                                           placeholder="AUN NO FUNCIONA"></textarea>
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="row mt-2">
-                                      <div class="col-8">
-                                        <div class="row">
-                                          <div class="col-4 text-left text-md-right text-lg-right">
-                                            <label for="commet" id="resaltar">Comentar como:</label>
-                                          </div>
-
-                                          <div class="col-8 text-left">
-                                            <select id="identityMenu" name="commet" dir="ltr" onchange="BLOG_CMT_onSelectorChange()">
-                                              <option value="NONE" disabled="">Seleccionar perfil...</option>
-                                              <option value="CURRENT">Cuenta de correo</option>
-                                              <option value="NAMEURL">Nombre/URL</option>
-                                              <option value="ANON">Anónimo</option>
-                                            </select>
-                                          </div>
-                                        </div>
-
-                                      </div>
-
-
-                                      <div class="col-4 text-right">
-                                        <button type="button" id="Enviar" class="btn btn-warning">Comentar</button>
-                                        <button type="button" id="Enviar" class="btn btn-warning" onclick="Cerrar()">Cerrar</button>
-                                      </div>
-                                    </div>
-
-                                  </div>
-                              </div>
-                            </div>
-
-
-                          </div>
-
-
-
-                        </div>
-                          <!--comentario Display: none-->
                         </div>
 
                       </div>

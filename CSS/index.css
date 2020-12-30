@@ -234,7 +234,7 @@ color: white;
   border-color: orange;
 }
 
-#identityMenu{
+input[id^='identityMen']{
   background-color: black;
   color: white;
   border-color: orange;
