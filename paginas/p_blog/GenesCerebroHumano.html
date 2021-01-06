@@ -98,7 +98,7 @@
    
 
     <!--cuerpo-->
-      <section id="contenido">
+      <section id="contenido" class="mb-4">
         <div class="container-fluid mb-4">
           <div class="row">
             <div class="col-12 col-lg-9">
@@ -155,7 +155,22 @@
                 <a href="https://actualidad.rt.com/actualidad/374166-insertar-genes-humanos-fetos-tities-cerebro">
                     Referencias de articulos 
                 </a><br>
-
+                <div class="row">
+                  <div class="col-8 col-md-3 col-lg-3">
+                    <div class="row">
+                      <div class="col-10">
+                        <div id="resaltar" style="font-size: 20px">Te ha gustado, hazmelo saber:</div>
+                      </div>
+                      <div class="col-2">
+                        <img src="../../img/corazonRojo.png" id="imagen-cambiante">
+                        <img src="../../img/corazon.png" id="imagen-cambiante" class="cambio" onclick="Likes()">
+                        <div style="left: 40px; top: 1px;position: absolute; color: orange" id="MeGustasArticle">0</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-9 col-lg-9">
+                  </div>
+                </div>
               </p>
               <!--caja de comentarios-->
 
@@ -165,7 +180,8 @@
                 <div class="col-12 col-md-10 col-lg-10">
                   <div class="row">
                     <div class="col-12 mb-2">
-                      <textarea class="form-control" style="background-color: black; color: white;" name="texto" id="validationTextarea" placeholder="Escribe tu comentario..." required></textarea>
+                      <textarea class="form-control" style="background-color: black; color: white;" name="texto"
+                                id="validationTextarea" placeholder="AUN NO FUNCIONA" required></textarea>
                     </div>
                     <div class="col-12">
                       <div class="row">
@@ -175,24 +191,65 @@
                               <label for="commet" id="resaltar">Comentar como:</label>
                             </div>
                             <div class="col-8 text-left">
-                              <select id="identityMenu" name="commet" dir="ltr" onchange="BLOG_CMT_onSelectorChange()">
+                              <input type="text" id="identityMenu" list="lista_opciones" />
+
+                              <datalist id="lista_opciones" name="commet" dir="ltr">
                                 <option value="NONE" disabled="">Seleccionar perfil...</option>
-                                <option value="CURRENT">Cuenta de correo</option>
-                                <option value="NAMEURL">Nombre/URL</option>
-                                <option value="ANON">Anónimo</option>
-                              </select>                         
+                                <option value="Anónimo">Anónimo</option>
+                              </datalist>
                             </div>
                           </div>
                         </div>
                         <div class="col-4 text-right">
-                          <button type="button" id="Enviar" class="btn btn-warning">Enviar</button>
+                          <button type="button" id="Enviar" class="btn btn-warning" onclick="Enviar()">Muy Pronto!</button>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentarios" class="btn btn-warning mt-2" style="width: 100%" onclick="Generar()">
+                              Warning</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentariosCerrar" class="btn btn-warning mt-2" style="width: 100%; display: none" onclick="CerrarLoGenerar()">
+                              Cerrar Comentarios</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!--Comentarios Generados -->
+                      <div id="PosicionarComentarios">
+
+
+                      </div>
+
+
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentariosCerrar" class="btn btn-warning mt-2" style="width: 100%; display: none" onclick="CerrarLoGenerar()">
+                              Cerrar Comentarios</button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <div class="col-12 col-md-2 col-lg-2"></div>
                   </div>
                 </div>
-                <div class="col-12 col-md-2 col-lg-2"></div>              
+                <div class="col-12 col-lg-3">
+
+                </div>
               </div>
+
+
+
             </div>
             <div class="col-12 col-lg-3">
 
@@ -376,7 +433,7 @@
       </div>
     </footer>
     <!--/footer-->
-    
+
     <!--Modal-->
     <div class="modal fade" id="modelSus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -395,9 +452,10 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">@</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="email" id="emailId" class="form-control" placeholder="Escribe tu Email" aria-label="Username" aria-describedby="basic-addon1">
+
                   </div>
-                </div>  
+                </div>
               </div>
             </form>
             <div class="alert alert-success" role="alert">
@@ -406,12 +464,13 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Suscribirse</button>
+            <button type="button" class="btn btn-primary" onclick="Suscribirse()">Suscribirse</button>
           </div>
         </div>
       </div>
     </div>
     <!--/Modal-->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="..\..\JS/HeredarArticulos.js"></script>

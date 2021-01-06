@@ -106,6 +106,8 @@ fetch('http://localhost:8080/Bayiva/api/articles/all',{
     for(var i= 0; i<=cajita.length-1; i++){
         var container = document.getElementById("row"+i);
 
+        console.log()
+        container.innerHTML+=cajita[i].topic;
         container.innerHTML+=cajita[i].title;
         container.innerHTML+=cajita[i].description;
         container.innerHTML+=cajita[i].link;

@@ -21,6 +21,18 @@ body{
   color: orange;
 }
 
+div[id^='MeGustasArtic']{
+  left: 40px;
+  top: 1px;
+  position: absolute;
+  color: orange;
+}
+/*
+#MeGustasArticle{
+
+
+}*/
+
 #resaltar2{
   color: rgb(0, 179, 250);
 }

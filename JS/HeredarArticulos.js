@@ -40,15 +40,22 @@ function Enviar() {
     var Usuario = document.getElementById('identityMenu');
     console.log("User: "+Usuario.value);
 
+
+
     var resul = document.getElementById('validationTextarea');
     console.log("Contenido: "+resul.value);
 
     var d = new Date();
-    console.log(d.getDate()+"-"+d.getMonth()+"-"+d.getFullYear());
+    var meses= d.getMonth()+1;
+
+    console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
     console.log(d.getHours()+":"+d.getMinutes());
-    console.log(NumeroComentarios+1);
+    console.log(meses+1);
 
+    //console.log(NumeroComentarios+1);
+    console.log(NumeroComentariosTotal+1);
 
+    IdEnviado=NumeroComentariosTotal+1;
     var IdActual=pair[1];
     fetch('http://localhost:8080/Bayiva/api/comentariosA/save', {
         method: 'POST',
@@ -56,10 +63,10 @@ function Enviar() {
             'content-type':'application/json',
         },
         body:JSON.stringify({
-            "commentsAId": NumeroComentarios+1,
+            "commentsAId": NumeroComentariosTotal+1,
             "articleId": IdActual,
             "user": Usuario.value,
-            "date":d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate(),
+            "date":d.getDate()+"/"+meses+"/"+d.getFullYear() ,
             "hour": d.getHours()+":"+d.getMinutes(),
             "description": resul.value
             //"articles": articles
@@ -81,10 +88,52 @@ function Enviar() {
 
         var datos = JSON.parse(arr);
         //console.log(datos);
+        generarLikes(IdEnviado);
     });
+
+
+
+    //NumeroComentariosTotal=NumeroComentariosTotal+1;
 
     return resul;
 };
+
+function generarLikes(IdEnviado){
+    console.log("--------pair[1]----------");
+    //console.log(pair[1]);
+    loko=pair[1];
+    console.log(loko);
+    console.log("--------pair[1]----------");
+    /*---------crear el sistema de likes en el comentarios-------------*/
+    fetch('http://localhost:8080/Bayiva/api/megustasComentarios/save', {
+        method: 'POST',
+        headers:{
+            'content-type':'application/json',
+        },
+        body:JSON.stringify({
+            "likesCommentsId": IdEnviado,
+            "commentsId": IdEnviado,
+            "numberLikes": 0,
+            "articleId": loko
+        })
+
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
+
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
+
+        var arr=preguntas;
+        //console.log(arr);
+
+        var datos = JSON.parse(arr);
+        //console.log(datos);
+    });
+}
 
 
 function RespuestaGenerar(Id){
@@ -96,12 +145,16 @@ function RespuestaGenerar(Id){
 
     resul.setAttribute("style","display:block;");
     resul_cierre.setAttribute("style","display:block;color: aquamarine; right: 25px;");
-    Botton_VerRespuestas.disabled = false;
+    //Botton_VerRespuestas.setAttribute("style","display:none;color: aquamarine; right: 25px;");
+
+    //Botton_VerRespuestas.disabled = false;
 
     /*-----------------Cambio del display------------------*/
 
 
     /*-----------------generando el respuestas------------------*/
+
+
     fetch('http://localhost:8080/Bayiva/api/respuestasA/getByCommentId/'+Id, {
         method: 'GET',
         //body:JSON(1)
@@ -284,28 +337,31 @@ function RespuestaGenerar(Id){
 
             var divContenedor1 = document.createElement("input");
             divContenedor1.setAttribute("type", "image");
-            divContenedor1.setAttribute("style", "height: 25px; width: 25px;");
+            divContenedor1.setAttribute("style", "height: 25px; width: 25px;visibility:hidden");
             divContenedor1.setAttribute("alt", "Login");
             divContenedor1.setAttribute("src", "../../img/responder.png");
             divContenedor1.setAttribute("onclick", "Responder(" + i + ")");
 
             var divContenedor2 = document.createElement("img");
+            /*
             divContenedor2.setAttribute("src", "../../img/corazonRojo.png");
             divContenedor2.setAttribute("id", "imagen-cambiante");
-            divContenedor2.setAttribute("onclick", "Likes");
+            divContenedor2.setAttribute("onclick", "Likes("+Id+")");
 
-
+*/
             var divContenedor3 = document.createElement("img");
+            /*
             divContenedor3.setAttribute("src", "../../img/corazon.png");
             divContenedor3.setAttribute("id", "imagen-cambiante");
             divContenedor3.setAttribute("class", "cambio");
-
+*/
             var divContenedor4 = document.createElement("div");
+            /*
             divContenedor4.setAttribute("style", "left: 70px; top: 1px;position: absolute");
             divContenedor4.setAttribute("id", "resaltar");
+*/
 
-
-            divContenedor4.innerHTML += 85;
+            //divContenedor4.innerHTML += 85;
 
             //contenedor del contenido
 
@@ -321,9 +377,7 @@ function RespuestaGenerar(Id){
     });
     /*-----------------generando el respuestas------------------*/
 
-
 };
-
 
 function CerrarRespuestas(Id){
 
@@ -334,7 +388,7 @@ function CerrarRespuestas(Id){
 
     resul.setAttribute("style","display:none;");
     resul_cierre.setAttribute("style","display:none;color: aquamarine; right: 25px;");
-    Botton_VerRespuestas.disabled = true;
+    //Botton_VerRespuestas.setAttribute("style","display:block;color: aquamarine; right: 25px;");
 
     resul.innerHTML = "";
 
@@ -358,7 +412,13 @@ function ComentarRespuesta(Id){
     console.log(d.getHours()+":"+d.getMinutes());
     //console.log(Numero_Respuestas+1);
 
+    var meses= d.getMonth()+1;
+
     var Respuestanum= Numero_Respuestas+1;
+    console.log(Respuestanum);
+    console.log(Id);
+
+    //console.log(Respuestanum);
 
     fetch('http://localhost:8080/Bayiva/api/respuestasA/save', {
         method: 'POST',
@@ -369,7 +429,7 @@ function ComentarRespuesta(Id){
             "answersAId": Respuestanum,
             "commentsAId": Id,
             "user": Usuario.value,
-            "date":d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate(),
+            "date":d.getDate()+"/"+meses+"/"+d.getFullYear(),
             "hour": d.getHours()+":"+d.getMinutes(),
             "description": resul.value
             //"articles": articles
@@ -398,6 +458,165 @@ function ComentarRespuesta(Id){
 /*-----------------botones comentarios------------------*/
 
 
+/*-----------------Systema de Likes------------------*/
+fetch('http://localhost:8080/Bayiva/api/megustasArticulos/getByArticlesId/'+pair[1], {
+    method: 'GET',
+    //body:JSON(1)
+
+}).then(function(response) {
+    if(response.ok) {
+        return response.text()
+        alert("Error en la llamada Ajax");
+
+    } else {
+        throw "Error en la llamada Ajax";
+    }
+}).then(function (preguntas) {
+
+    var arr = preguntas;
+
+    var datos = JSON.parse(arr);
+
+    var cajita = [];
+    for (let item of datos) {
+        cajita.push(item);
+    }
+
+    numberLikes = cajita[0].numberLikes;
+
+    console.log(numberLikes);
+    var aumentar_likes = document.getElementById("MeGustasArticle");
+
+    aumentar_likes.innerHTML=""+numberLikes;
+});
+
+function Likes(){
+
+    numberLikes=numberLikes+1;
+    console.log("-----------------Suma----------------------");
+    console.log(numberLikes);
+    fetch('http://localhost:8080/Bayiva/api/megustasArticulos/save', {
+        method: 'POST',
+        headers:{
+            'content-type':'application/json',
+        },
+        body:JSON.stringify({
+            "likesArticleId": pair[1],
+            "articleId": pair[1],
+            "numberLikes": numberLikes,
+            "numberOption_1": 1,
+            "numberOption_2": 1
+        })
+
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
+
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
+
+        var arr=preguntas;
+        //console.log(arr);
+
+        var datos = JSON.parse(arr);
+        //console.log(datos);
+    });
+
+    var aumentar_likes = document.getElementById("MeGustasArticle");
+
+    aumentar_likes.innerHTML=""+numberLikes;
+
+        //botton_carga.innerHTML="Comentarios: "+NumeroComentarios;
+
+}
+
+/*-----------------Comentarios Likes------------------*/
+
+
+function LikesC(Id){
+
+    fetch('http://localhost:8080/Bayiva/api/megustasComentarios/getByComentsId/'+Id, {
+        method: 'GET',
+        //body:JSON(1)
+
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
+
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
+
+        var arr = preguntas;
+
+        var datos = JSON.parse(arr);
+
+        var cajita = [];
+        for (let item of datos) {
+            cajita.push(item);
+        }
+
+        numberLikesComentarios = cajita[0].numberLikes;
+
+        console.log(numberLikesComentarios);
+        /*
+        var aumentar_likes = document.getElementById("MeGustasArticle");
+
+        aumentar_likes.innerHTML=""+numberLikesComentarios;
+        */
+
+        numberLikesComentarios=numberLikesComentarios+1;
+        console.log("-----------------Suma----------------------");
+        console.log(numberLikesComentarios);
+
+        fetch('http://localhost:8080/Bayiva/api/megustasComentarios/save', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json',
+            },
+            body:JSON.stringify({
+                "likesCommentsId": Id,
+                "commentsId": Id,
+                "numberLikes": numberLikesComentarios,
+                "articleId": pair[1]
+            })
+
+        }).then(function(response) {
+            if(response.ok) {
+                return response.text()
+                alert("Error en la llamada Ajax");
+
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+        }).then(function (preguntas) {
+
+            var arr=preguntas;
+            //console.log(arr);
+
+            var datos = JSON.parse(arr);
+            //console.log(datos);
+        });
+
+        var aumentar_likes = document.getElementById("MeGustasArticle"+Id);
+
+        aumentar_likes.innerHTML=""+numberLikesComentarios;
+
+    });
+
+
+
+}
+
+/*-----------------Systema de Likes------------------*/
+
+
+
 fetch('http://localhost:8080/Bayiva/api/articles/getByArticlesId/'+pair[1], {
     method: 'GET',
     //body:JSON(1)
@@ -423,32 +642,8 @@ fetch('http://localhost:8080/Bayiva/api/articles/getByArticlesId/'+pair[1], {
     for(let item of datos){
         cajita.push(item);
     }
-/*
-    console.log("----arrayCajita----");
-    for(var i= cajita.length-1; i>=0; i--){
 
-        console.log(cajita[i]);
-    }
-    console.log("----arrayCajita----");
-*/
-    /*
-    title=cajita[0].title;
-    topic=cajita[0].topic;
-    description=cajita[0].description;
-    greatdescription=cajita[0].greatdescription;
-    link=cajita[0].link;
-    imagesAS=cajita[0].imagesAS;
-    /*
-    imagesASId=cajita[0].imagesAS.articleId;
-    imagesASId=cajita[0].imagesAS.url;
-    commentsAS=cajita[0].commentsAS;
-    console.log("---------------------------------------");
-    console.log(imagesAS);
-    console.log("---------------------------------------");
-*/
 });
-
-
 
 fetch('http://localhost:8080/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
     method: 'GET',
@@ -465,30 +660,14 @@ fetch('http://localhost:8080/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
 }).then(function (preguntas) {
 
     var arr = preguntas;
-    //console.log(arr);
 
     var datos = JSON.parse(arr);
-    //console.log(datos);
 
     var cajita = [];
     for (let item of datos) {
-        /*
-        -Lo puedo usar para coger solo un valor
-        -del objeto en cuestion
 
-        cajita.push(item.texto);
-        console.log(item.texto);
-        */
         cajita.push(item);
-        //console.log(item);
     }
-
-    console.log("---------------------------------------");
-    articles = cajita[0].articles;
-
-    //console.log(articles);
-    console.log("---------------------------------------");
-
 
     NumeroComentarios = cajita.length;
 
@@ -500,283 +679,400 @@ fetch('http://localhost:8080/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
     }
     console.log("----array----");
 
-    var container = document.getElementById("PosicionarComentarios");
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var divContenedor = document.createElement("div");
-        divContenedor.setAttribute("class", "mt-3 mb-2");
-        divContenedor.setAttribute("id", "comentarios" + i);
+    var botton_carga = document.getElementById("NumeroDeComentarios");
 
-        /*-------------------separacion--------------------*/
-        divContenedor.innerHTML += "<h3></h3>"
+    botton_carga.innerHTML="Comentarios: "+NumeroComentarios;
 
-        //contenedor del contenido
+    console.log(NumeroComentarios);
+});
 
-        container.appendChild(divContenedor);
+function CerrarLoGenerar(){
 
-    }
+    var Botton_VerRespuestas = document.getElementById('NumeroDeComentarios');
+    var resul = document.getElementById('PosicionarComentarios');
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("comentarios" + i);
+    var Botton_CerrarRespuestas = document.getElementById('NumeroDeComentariosCerrar');
 
-        var CommentId= cajita[i].commentsAId;
+    Botton_CerrarRespuestas.setAttribute("style","display:none;width: 100%;");
+    //var resul_cierre = document.getElementById('botton_cierre_respuestas'+Id);
 
-        var divContenedor = document.createElement("div");
-        divContenedor.setAttribute("class", "row");
-        divContenedor.setAttribute("id", "row" + i);
+    Botton_VerRespuestas.setAttribute("style","display:block;width: 100%;");
+    //resul_cierre.setAttribute("style","display:none;color: aquamarine; right: 25px;");
+    //Botton_VerRespuestas.disabled = true;
 
+    resul.innerHTML = "";
 
-        var TextAreaEscondido = document.createElement("div");
-        TextAreaEscondido.setAttribute("style", "display:none;");
-        TextAreaEscondido.setAttribute("id", "resultado_text" + i);
-        TextAreaEscondido.setAttribute("class", "mt-2");
 
+    //resul.style.display = "block";
+    //var ArticleId=boton.value;
+    //window.location=link+"?Id="+ArticleId;
+    //return resul,resul_cierre,Botton_VerRespuestas;
+    return resul,Botton_CerrarRespuestas,Botton_VerRespuestas;
+};
 
-        var BotonesDisplay = document.createElement("div");
-        BotonesDisplay.setAttribute("id", "BotonesDisplay" + i);
-        BotonesDisplay.setAttribute("class", "col-12");
 
-        var resultado_respuestas = document.createElement("div");
-        resultado_respuestas.setAttribute("id", "resultado_respuestas" + CommentId);
-        resultado_respuestas.setAttribute("class", "container");
-        resultado_respuestas.setAttribute("style", "display:none;");
+function Generar() {
 
+    var Botton_VerRespuestas = document.getElementById('NumeroDeComentarios');
+    var Botton_CerrarRespuestas = document.getElementById('NumeroDeComentariosCerrar');
 
+    Botton_CerrarRespuestas.setAttribute("style","display:block;width: 100%;");
+    Botton_VerRespuestas.setAttribute("style","display:none;width: 100%;");
 
-        //contenedor del contenido
 
-        Contenedor.appendChild(divContenedor);
-        Contenedor.appendChild(TextAreaEscondido);
-        Contenedor.appendChild(BotonesDisplay);
-        Contenedor.appendChild(resultado_respuestas);
-    }
+    fetch('http://localhost:8080/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
+        method: 'GET',
+        //body:JSON(1)
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var ContenedorRow = document.getElementById("row" + i);
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
 
-        x = 0;
-        /*-----------------*/
-        var divContenedor1 = document.createElement("div");
-        divContenedor1.setAttribute("class", "col-8");
-        divContenedor1.setAttribute("id", "row" + i + "-" + x++);
-        /*-----------------*/
-        var divContenedor2 = document.createElement("div");
-        divContenedor2.setAttribute("class", "col-4 text-right");
-        divContenedor2.setAttribute("id", "row" + i + "-" + x++);
-        /*-----------------*/
-        var divContenedor3 = document.createElement("div");
-        divContenedor3.setAttribute("class", "col-12 mb-2");
-        divContenedor3.setAttribute("id", "row" + i + "-" + x++);
-        /*-----------------*/
-        var divContenedor4 = document.createElement("div");
-        divContenedor4.setAttribute("class", "col-8");
-        divContenedor4.setAttribute("id", "row" + i + "-" + x++);
-        /*-----------------*/
-        var divContenedor5 = document.createElement("div");
-        divContenedor5.setAttribute("class", "col-4 text-right");
-        divContenedor5.setAttribute("id", "row" + i + "-" + x++);
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
 
-        //divContenedor.innerHTML+=cajita[i].imagesAS[0].url;
+        var arr = preguntas;
+        //console.log(arr);
 
-        //contenedor del contenido
+        var datos = JSON.parse(arr);
+        //console.log(datos);
 
-        ContenedorRow.appendChild(divContenedor1);
-        ContenedorRow.appendChild(divContenedor2);
-        ContenedorRow.appendChild(divContenedor3);
-        ContenedorRow.appendChild(divContenedor4);
-        ContenedorRow.appendChild(divContenedor5);
-    }
+        var cajita = [];
+        for (let item of datos) {
+            /*
+            -Lo puedo usar para coger solo un valor
+            -del objeto en cuestion
 
+            cajita.push(item.texto);
+            console.log(item.texto);
+            */
+            cajita.push(item);
+            //console.log(item);
+        }
 
-    /*----------------comentarios-----------------------*/
+        console.log("---------------------------------------");
+        articles = cajita[0].articles;
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("row" + i + "-" + 0);
+        //console.log(articles);
+        console.log("---------------------------------------");
 
+        NumeroComentarios = cajita.length;
 
-        /*----Usuario-----*/
-        var divContenedor = document.createElement("span");
-        divContenedor.setAttribute("id", "usuario");
+        /*---------Cosas por detras---------*/
+        var container = document.getElementById("PosicionarComentarios");
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var divContenedor = document.createElement("div");
+            divContenedor.setAttribute("class", "mt-3 mb-2");
+            divContenedor.setAttribute("id", "comentarios" + i);
 
+            /*-------------------separacion--------------------*/
+            divContenedor.innerHTML += "<h3></h3>"
 
-        /*----hora-----*/
-        var divContenedorUser = document.createElement("span");
-        divContenedorUser.setAttribute("id", "hora");
+            //contenedor del contenido
 
-        divContenedor.innerHTML += cajita[i].user + "&nbsp&nbsp";
-        divContenedorUser.innerHTML += cajita[i].hour;
+            container.appendChild(divContenedor);
 
-        //contenedor del contenido
-        Contenedor.appendChild(divContenedor);
-        Contenedor.appendChild(divContenedorUser);
-    }
+        }
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("row" + i + "-" + 1);
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("comentarios" + i);
 
-        var divContenedor = document.createElement("span");
-        divContenedor.setAttribute("id", "fecha");
+            var CommentId= cajita[i].commentsAId;
 
-        divContenedor.innerHTML += cajita[i].date;
+            var divContenedor = document.createElement("div");
+            divContenedor.setAttribute("class", "row");
+            divContenedor.setAttribute("id", "row" + i);
 
-        //contenedor del contenido
 
-        Contenedor.appendChild(divContenedor);
+            var TextAreaEscondido = document.createElement("div");
+            TextAreaEscondido.setAttribute("style", "display:none;");
+            TextAreaEscondido.setAttribute("id", "resultado_text" + i);
+            TextAreaEscondido.setAttribute("class", "mt-2");
 
-    }
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("row" + i + "-" + 2);
+            var BotonesDisplay = document.createElement("div");
+            BotonesDisplay.setAttribute("id", "BotonesDisplay" + i);
+            BotonesDisplay.setAttribute("class", "col-12");
 
-        var divContenedor = document.createElement("span");
-        divContenedor.setAttribute("style", "color: white");
+            var resultado_respuestas = document.createElement("div");
+            resultado_respuestas.setAttribute("id", "resultado_respuestas" + CommentId);
+            resultado_respuestas.setAttribute("class", "container");
+            resultado_respuestas.setAttribute("style", "display:none;");
 
-        divContenedor.innerHTML += cajita[i].description;
 
-        //contenedor del contenido
 
-        Contenedor.appendChild(divContenedor);
+            //contenedor del contenido
 
-    }
+            Contenedor.appendChild(divContenedor);
+            Contenedor.appendChild(TextAreaEscondido);
+            Contenedor.appendChild(BotonesDisplay);
+            Contenedor.appendChild(resultado_respuestas);
+        }
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("row" + i + "-" + 3);
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var ContenedorRow = document.getElementById("row" + i);
 
-        var CommentId= cajita[i].commentsAId;
+            x = 0;
+            /*-----------------*/
+            var divContenedor1 = document.createElement("div");
+            divContenedor1.setAttribute("class", "col-8");
+            divContenedor1.setAttribute("id", "row" + i + "-" + x++);
+            /*-----------------*/
+            var divContenedor2 = document.createElement("div");
+            divContenedor2.setAttribute("class", "col-4 text-right");
+            divContenedor2.setAttribute("id", "row" + i + "-" + x++);
+            /*-----------------*/
+            var divContenedor3 = document.createElement("div");
+            divContenedor3.setAttribute("class", "col-12 mb-2");
+            divContenedor3.setAttribute("id", "row" + i + "-" + x++);
+            /*-----------------*/
+            var divContenedor4 = document.createElement("div");
+            divContenedor4.setAttribute("class", "col-8");
+            divContenedor4.setAttribute("id", "row" + i + "-" + x++);
+            /*-----------------*/
+            var divContenedor5 = document.createElement("div");
+            divContenedor5.setAttribute("class", "col-4 text-right");
+            divContenedor5.setAttribute("id", "row" + i + "-" + x++);
 
-        var divContenedor1 = document.createElement("input");
-        divContenedor1.setAttribute("type", "image");
-        divContenedor1.setAttribute("style", "height: 25px; width: 25px;");
-        divContenedor1.setAttribute("alt", "Login");
-        divContenedor1.setAttribute("src", "../../img/responder.png");
-        divContenedor1.setAttribute("onclick", "Responder(" + i + ")");
+            //divContenedor.innerHTML+=cajita[i].imagesAS[0].url;
 
-        var divContenedor2 = document.createElement("img");
-        divContenedor2.setAttribute("src", "../../img/corazonRojo.png");
-        divContenedor2.setAttribute("id", "imagen-cambiante");
-        //divContenedor2.setAttribute("onclick", "Likes(" + CommentId + ")");
+            //contenedor del contenido
 
+            ContenedorRow.appendChild(divContenedor1);
+            ContenedorRow.appendChild(divContenedor2);
+            ContenedorRow.appendChild(divContenedor3);
+            ContenedorRow.appendChild(divContenedor4);
+            ContenedorRow.appendChild(divContenedor5);
+        }
 
-        var divContenedor3 = document.createElement("img");
-        divContenedor3.setAttribute("src", "../../img/corazon.png");
-        divContenedor3.setAttribute("id", "imagen-cambiante");
-        divContenedor3.setAttribute("class", "cambio");
-        divContenedor3.setAttribute("onclick", "Likes(" + CommentId + ")");
 
+        /*----------------comentarios-----------------------*/
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("row" + i + "-" + 0);
 
-        var divContenedor4 = document.createElement("div");
-        divContenedor4.setAttribute("style", "left: 70px; top: 1px;position: absolute");
-        divContenedor4.setAttribute("id", "resaltar");
 
+            /*----Usuario-----*/
+            var divContenedor = document.createElement("span");
+            divContenedor.setAttribute("id", "usuario");
 
-        divContenedor4.innerHTML += 85;
 
-        //contenedor del contenido
+            /*----hora-----*/
+            var divContenedorUser = document.createElement("span");
+            divContenedorUser.setAttribute("id", "hora");
 
-        Contenedor.appendChild(divContenedor1);
-        Contenedor.appendChild(divContenedor2);
-        Contenedor.appendChild(divContenedor3);
-        Contenedor.appendChild(divContenedor4);
+            divContenedor.innerHTML += cajita[i].user + "&nbsp&nbsp";
+            divContenedorUser.innerHTML += cajita[i].hour;
 
-    }
+            //contenedor del contenido
+            Contenedor.appendChild(divContenedor);
+            Contenedor.appendChild(divContenedorUser);
+        }
 
-    //Contenedor.innerHTML+=""
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("row" + i + "-" + 1);
 
+            var divContenedor = document.createElement("span");
+            divContenedor.setAttribute("id", "fecha");
 
-    /*----------textareaEscondido------------------*/
+            divContenedor.innerHTML += cajita[i].date;
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("resultado_text" + i);
+            //contenedor del contenido
 
-        var CommentId= cajita[i].commentsAId;
+            Contenedor.appendChild(divContenedor);
 
-        Contenedor.innerHTML += "                            <div class=\"row\">\n" +
-            "                              <div class=\"col-12\">\n" +
-            "                                <div class=\"row\">\n" +
-            "                                  <div class=\"col-12\">\n" +
-            "                                    <textarea class=\"form-control\" id=\"validationTextarea" + CommentId + "\" " +
-            "                                               style=\"background-color: black; color: white;\"\n" +
-            "                                           placeholder=\"AUN NO FUNCIONA\"></textarea>\n" +
-            "                                  </div>\n" +
-            "                                  <div class=\"col-12\">\n" +
-            "                                    <div class=\"row mt-2\">\n" +
-            "                                      <div class=\"col-8\">\n" +
-            "                                        <div class=\"row\">\n" +
-            "                                          <div class=\"col-4 text-left text-md-right text-lg-right\">\n" +
-            "                                            <label for=\"commet\" id=\"resaltar\">Comentar como:</label>\n" +
-            "                                          </div>\n" +
-            "\n" +
-            "                                          <div class=\"col-8 text-left\">\n" +
-            "                              <input type=\"text\" id=\"identityMenu" + CommentId + "\" list=\"lista_opciones" + i + "\" />\n" +
-            "\n" +
-            "                              <datalist id=\"lista_opciones" + i + "\" name=\"commet\" dir=\"ltr\">\n" +
-            "                                <option value=\"NONE\" disabled=\"\">Seleccionar perfil...</option>\n" +
-            "                                <option value=\"Anónimo\">Anónimo</option>\n" +
-            "                              </datalist>\n" +
-            "                                          </div>\n" +
-            "                                        </div>\n" +
-            "\n" +
-            "                                      </div>\n" +
-            "\n" +
-            "\n" +
-            "                                      <div class=\"col-4 text-right\">\n" +
-            "                                        <button type=\"button\" id=\"Enviar\" class=\"btn btn-warning\" onclick=\"ComentarRespuesta(" + CommentId + ")\">Comentar</button>\n" +
-            "                                        <button type=\"button\" id=\"Enviar\" class=\"btn btn-warning\" onclick=\"Cerrar(" + i + ")\">Cerrar</button>\n" +
-            "                                      </div>\n" +
-            "                                    </div>\n" +
-            "\n" +
-            "                                  </div>\n" +
-            "                              </div>\n" +
-            "                            </div>\n" +
-            "\n" +
-            "\n" +
-            "                          </div>\n";
+        }
 
-    }
-    /*----------textareaEscondido------------------*/
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("row" + i + "-" + 2);
 
+            var divContenedor = document.createElement("span");
+            divContenedor.setAttribute("style", "color: white");
 
+            divContenedor.innerHTML += cajita[i].description;
 
-    /*----------BotonesDisplay------------------*/
+            //contenedor del contenido
 
-    for (var i = cajita.length - 1; i >= 0; i--) {
-        var Contenedor = document.getElementById("BotonesDisplay" + i);
+            Contenedor.appendChild(divContenedor);
 
-        var CommentId= cajita[i].commentsAId;
+        }
 
+        /*--------Botones de Likes-------*/
 
-        Contenedor.innerHTML += "                                <div class=\"row\">\n" +
-            "                                  <div class=\"col-4\">\n" +
-            "                                    <div class=\"row\">\n" +
-            "                                      <div class=\"col-4 text-right\" id=\"botton_RespuestaGenerar" + CommentId + "\"\n" +
-            "                                               onclick=\"RespuestaGenerar(" + CommentId + ")\">\n" +
-            "                                        <img src=\"../../img/flechabaja.png\" style=\"height: 25px; width: 25px;\"\n" +
-            "                                             id=\"imagen-cambiante\" >\n" +
-            "                                      </div>\n" +
-            "                                      <div class=\"col-8\" id=\"botton_RespuestaGenerar" + CommentId + "\"\n" +
-            "                                               onclick=\"RespuestaGenerar(" + CommentId + ")\">\n" +
-            "                                        <span style=\"color: aquamarine; right: 25px\">Ver Respuestas</span>\n" +
-            "                                      </div>\n" +
-            "                                    </div>\n" +
-            "                                  </div>\n" +
-            "                                  <div class=\"col-8 text-right\">\n" +
-            "                                    <span style=\"display:none;\" id=\"botton_cierre_respuestas" + CommentId + "\"\n" +
-            "                                          onclick=\"CerrarRespuestas(" + CommentId + ")\">Cerrar Respuestas</span>\n" +
-            "                                  </div>\n" +
-            "\n" +
-            "                                </div>\n";
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("row" + i + "-" + 3);
 
-    }
-    /*----------BotonesDisplay------------------*/
+            var CommentId= cajita[i].commentsAId;
 
+            var divContenedor1 = document.createElement("input");
+            divContenedor1.setAttribute("type", "image");
+            divContenedor1.setAttribute("style", "height: 25px; width: 25px;");
+            divContenedor1.setAttribute("alt", "Login");
+            divContenedor1.setAttribute("src", "../../img/responder.png");
+            divContenedor1.setAttribute("onclick", "Responder(" + i + ")");
 
+            var divContenedor2 = document.createElement("img");
+            divContenedor2.setAttribute("src", "../../img/corazonRojo.png");
+            divContenedor2.setAttribute("id", "imagen-cambiante");
+            //divContenedor2.setAttribute("onclick", "Likes(" + CommentId + ")");
 
 
-    /*----------resultado_respuestas------------------*/
+            var divContenedor3 = document.createElement("img");
+            divContenedor3.setAttribute("src", "../../img/corazon.png");
+            divContenedor3.setAttribute("id", "imagen-cambiante");
+            divContenedor3.setAttribute("class", "cambio");
+            divContenedor3.setAttribute("onclick", "LikesC(" + CommentId + ")");
 
 
+            var divContenedor4 = document.createElement("div");
+            divContenedor4.setAttribute("style", "left: 70px; top: 1px;position: absolute");
+            divContenedor4.setAttribute("id", "MeGustasArticle" + CommentId);
 
 
-    fetch('http://localhost:8080/Bayiva/api/respuestasA/all', {
+            divContenedor4.innerHTML += 0;
+
+            //contenedor del contenido
+
+            Contenedor.appendChild(divContenedor1);
+            Contenedor.appendChild(divContenedor2);
+            Contenedor.appendChild(divContenedor3);
+            Contenedor.appendChild(divContenedor4);
+
+        }
+
+        //Contenedor.innerHTML+=""
+
+
+        /*----------textareaEscondido------------------*/
+
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("resultado_text" + i);
+
+            var CommentId= cajita[i].commentsAId;
+
+            Contenedor.innerHTML += "                            <div class=\"row\">\n" +
+                "                              <div class=\"col-12\">\n" +
+                "                                <div class=\"row\">\n" +
+                "                                  <div class=\"col-12\">\n" +
+                "                                    <textarea class=\"form-control\" id=\"validationTextarea" + CommentId + "\" " +
+                "                                               style=\"background-color: black; color: white;\"\n" +
+                "                                           placeholder=\"AUN NO FUNCIONA\" required></textarea>\n" +
+                "                                  </div>\n" +
+                "                                  <div class=\"col-12\">\n" +
+                "                                    <div class=\"row mt-2\">\n" +
+                "                                      <div class=\"col-8\">\n" +
+                "                                        <div class=\"row\">\n" +
+                "                                          <div class=\"col-4 text-left text-md-right text-lg-right\">\n" +
+                "                                            <label for=\"commet\" id=\"resaltar\">Comentar como:</label>\n" +
+                "                                          </div>\n" +
+                "\n" +
+                "                                          <div class=\"col-8 text-left\">\n" +
+                "                              <input type=\"text\" id=\"identityMenu" + CommentId + "\" list=\"lista_opciones" + i + "\" />\n" +
+                "\n" +
+                "                              <datalist id=\"lista_opciones" + i + "\" name=\"commet\" dir=\"ltr\">\n" +
+                "                                <option value=\"NONE\" disabled=\"\">Seleccionar perfil...</option>\n" +
+                "                                <option value=\"Anónimo\">Anónimo</option>\n" +
+                "                              </datalist>\n" +
+                "                                          </div>\n" +
+                "                                        </div>\n" +
+                "\n" +
+                "                                      </div>\n" +
+                "\n" +
+                "\n" +
+                "                                      <div class=\"col-4 text-right\">\n" +
+                "                                        <button type=\"button\" id=\"Enviar\" class=\"btn btn-warning\" onclick=\"ComentarRespuesta(" + CommentId + ")\">Comentar</button>\n" +
+                "                                        <button type=\"button\" id=\"Enviar\" class=\"btn btn-warning\" onclick=\"Cerrar(" + i + ")\">Cerrar</button>\n" +
+                "                                      </div>\n" +
+                "                                    </div>\n" +
+                "\n" +
+                "                                  </div>\n" +
+                "                              </div>\n" +
+                "                            </div>\n" +
+                "\n" +
+                "\n" +
+                "                          </div>\n";
+
+        }
+        /*----------textareaEscondido------------------*/
+
+
+
+        /*----------BotonesDisplay------------------*/
+
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            var Contenedor = document.getElementById("BotonesDisplay" + i);
+
+            var CommentId= cajita[i].commentsAId;
+
+
+            Contenedor.innerHTML += "                                <div class=\"row\">\n" +
+                "                                  <div class=\"col-4\">\n" +
+                "                                    <div class=\"row\">\n" +
+                "                                      <div class=\"col-4 text-right\" id=\"botton_RespuestaGenerar" + CommentId + "\"\n" +
+                "                                               onclick=\"RespuestaGenerar(" + CommentId + ")\">\n" +
+                "                                        <img src=\"../../img/flechabaja.png\" style=\"height: 25px; width: 25px;\"\n" +
+                "                                             id=\"imagen-cambiante\" >\n" +
+                "                                      </div>\n" +
+                "                                      <div class=\"col-8\" id=\"botton_RespuestaGenerar" + CommentId + "\"\n" +
+                "                                               onclick=\"RespuestaGenerar(" + CommentId + ")\">\n" +
+                "                                        <span style=\"color: aquamarine; right: 25px\">Ver Respuestas</span>\n" +
+                "                                      </div>\n" +
+                "                                    </div>\n" +
+                "                                  </div>\n" +
+                "                                  <div class=\"col-8 text-right\">\n" +
+                "                                    <span style=\"display:none;\" id=\"botton_cierre_respuestas" + CommentId + "\"\n" +
+                "                                          onclick=\"CerrarRespuestas(" + CommentId + ")\">Cerrar Respuestas</span>\n" +
+                "                                  </div>\n" +
+                "\n" +
+                "                                </div>\n";
+
+        }
+        /*----------BotonesDisplay------------------*/
+
+
+        /*----------resultado_respuestas------------------*/
+        fetch('http://localhost:8080/Bayiva/api/respuestasA/all', {
+            method: 'GET',
+            //body:JSON(1)
+
+        }).then(function(response) {
+            if(response.ok) {
+                return response.text()
+                alert("Error en la llamada Ajax");
+
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+        }).then(function (preguntas) {
+
+            var arr = preguntas;
+
+            var datos = JSON.parse(arr);
+
+            var cajita = [];
+            for (let item of datos) {
+                cajita.push(item);
+            }
+
+            console.log("-----------------Numero_Respuestas----------------------");
+            Numero_Respuestas = cajita.length;
+            console.log(Numero_Respuestas);
+            console.log("------------------Numero_Respuestas---------------------");
+        });
+        /*----------resultado_respuestas------------------*/
+
+
+        likesGeneradosComentarios();
+        return container,Botton_VerRespuestas,Botton_CerrarRespuestas;
+    });
+};
+
+function likesGeneradosComentarios(){
+
+    /*----------Generar Likes------------------*/
+    fetch('http://localhost:8080/Bayiva/api/megustasComentarios/getByArticlesId/'+pair[1], {
         method: 'GET',
         //body:JSON(1)
 
@@ -796,37 +1092,66 @@ fetch('http://localhost:8080/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
 
         var cajita = [];
         for (let item of datos) {
+
             cajita.push(item);
         }
 
-        console.log("-----------------Numero_Respuestas----------------------");
-        Numero_Respuestas = cajita.length;
-        console.log(Numero_Respuestas);
-        console.log("------------------Numero_Respuestas---------------------");
+        console.log("----array----");
+        for (var i = cajita.length - 1; i >= 0; i--) {
 
+            console.log(cajita[i]);
+        }
+        console.log("----array----");
 
+        console.log("----Numero de cajita----");
+        console.log(cajita.length);
 
+        for (var j = cajita.length - 1; j >= 0; j--) {
+            var MiLikes = document.getElementById("MeGustasArticle" + cajita[j].commentsId);
+            //console.log(cajita[j].numberLikes);
+            //console.log(cajita[j].commentsId);
+            //var span = document.createElement("span");
+            MiLikes.innerHTML=cajita[j].numberLikes;
+
+            //MiLikes.appendChild(span);
+            /*
+            if (cajita[j].commentsId==j){
+                console.log("Entro!");
+            }
+            */
+        }
     });
+}
 
+/*-----------------rescursos---------------*/
 
+fetch('http://localhost:8080/Bayiva/api/comentariosA/all', {
+    method: 'GET',
+    //body:JSON(1)
 
+}).then(function(response) {
+    if(response.ok) {
+        return response.text()
+        alert("Error en la llamada Ajax");
 
-    /*----------resultado_respuestas------------------*/
+    } else {
+        throw "Error en la llamada Ajax";
+    }
+}).then(function (preguntas) {
 
+    var arr = preguntas;
 
+    var datos = JSON.parse(arr);
 
+    var cajita = [];
+    for (let item of datos) {
 
+        cajita.push(item);
+    }
+    console.log("----Numero total comment----");
+
+    NumeroComentariosTotal = cajita.length;
+    console.log(NumeroComentariosTotal);
+
+    console.log("----Numero total comment----");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

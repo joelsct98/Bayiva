@@ -98,7 +98,7 @@
     <!--/Main-->
 
     <!--cuerpo-->
-      <section id="contenido">
+      <section id="contenido"  class="mb-4">
         <div class="container-fluid ">
           <h3>Computación Cuántica</h3>
           <div class="row">
@@ -179,8 +179,100 @@
                 <br><br>
                 <span id="resaltar">¡Gracias por leerme!</span>
                 <br><br>
-
+                <div class="row">
+                  <div class="col-8 col-md-3 col-lg-3">
+                    <div class="row">
+                      <div class="col-10">
+                        <div id="resaltar" style="font-size: 20px">Te ha gustado, hazmelo saber:</div>
+                      </div>
+                      <div class="col-2">
+                        <img src="../../img/corazonRojo.png" id="imagen-cambiante">
+                        <img src="../../img/corazon.png" id="imagen-cambiante" class="cambio" onclick="Likes()">
+                        <div  id="MeGustasArticle">0</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-md-9 col-lg-9">
+                  </div>
+                </div>
               </p>
+              <h3>Comentarios</h3>
+
+              <div class="row mt-4">
+                <div class="col-12 col-md-10 col-lg-10">
+                  <div class="row">
+                    <div class="col-12 mb-2">
+                      <textarea class="form-control" style="background-color: black; color: white;" name="texto"
+                                id="validationTextarea" placeholder="AUN NO FUNCIONA" required></textarea>
+                    </div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="col-8">
+                          <div class="row">
+                            <div class="col-4 text-left text-md-right text-lg-right">
+                              <label for="commet" id="resaltar">Comentar como:</label>
+                            </div>
+                            <div class="col-8 text-left">
+                              <input type="text" id="identityMenu" list="lista_opciones" />
+
+                              <datalist id="lista_opciones" name="commet" dir="ltr">
+                                <option value="NONE" disabled="">Seleccionar perfil...</option>
+                                <option value="Anónimo">Anónimo</option>
+                              </datalist>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4 text-right">
+                          <button type="button" id="Enviar" class="btn btn-warning" onclick="Enviar()">Muy Pronto!</button>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentarios" class="btn btn-warning mt-2" style="width: 100%" onclick="Generar()">
+                              Warning</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentariosCerrar" class="btn btn-warning mt-2" style="width: 100%; display: none" onclick="CerrarLoGenerar()">
+                              Cerrar Comentarios</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!--Comentarios Generados -->
+                      <div id="PosicionarComentarios">
+
+
+
+
+                      </div>
+
+
+
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-12">
+                            <button type="button" id="NumeroDeComentariosCerrar" class="btn btn-warning mt-2" style="width: 100%; display: none" onclick="CerrarLoGenerar()">
+                              Cerrar Comentarios</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2"></div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-3">
+
+                </div>
+              </div>
+
+
             </div>
             <div class="col-12 col-lg-3">
             </div>
@@ -328,7 +420,7 @@
       </div>
     </footer>
     <!--/footer-->
-    
+
     <!--Modal-->
     <div class="modal fade" id="modelSus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -347,9 +439,10 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">@</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="email" id="emailId" class="form-control" placeholder="Escribe tu Email" aria-label="Username" aria-describedby="basic-addon1">
+
                   </div>
-                </div>  
+                </div>
               </div>
             </form>
             <div class="alert alert-success" role="alert">
@@ -358,7 +451,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Suscribirse</button>
+            <button type="button" class="btn btn-primary" onclick="Suscribirse()">Suscribirse</button>
           </div>
         </div>
       </div>

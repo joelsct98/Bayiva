@@ -1,4 +1,156 @@
 
+/*---------comentariosa en html------------------*/
+<h3></h3>
+<div className="row">
+    <div className="col-8">
+        <span id="usuario">Usuario</span> &nbsp;&nbsp;
+        <span id="hora">22:00</span>
+    </div>
+    <div className="col-4 text-right">
+        <span id="fecha">22/10/1998</span>
+    </div>
+
+    <div className="col-12 mb-2">
+                                <span style="color: white">
+                                  Es gracioso, estando en Platzi es dificil evitar picar aquí y hallá en los cursos.
+                                  Lo que es benéfico porque terminas sabiendo de todo un poco y se expanden tus horizontes.
+                                </span>
+    </div>
+
+    <div className="col-8">
+        <input type="image" style="height: 25px; width: 25px;" alt="Login"
+               src="../../img/responder.png" onClick="Responder()">
+
+            <!--sistema de me Likes-->
+            <img src="../../img/corazonRojo.png" id="imagen-cambiante" onClick="Likes">
+                <img src="../../img/corazon.png" id="imagen-cambiante" className="cambio">
+                    <div style="left: 70px; top: 1px;position: absolute" id="resaltar">85</div>
+    </div>
+    <div className="col-4 text-right">
+    </div>
+
+    <!--comentario Display: none-->
+    <div id="resultado_text" style="display:none;" className="mt-2">
+        <div className="row">
+            <div className="col-12">
+                <div className="row">
+                    <div className="col-12">
+                                    <textarea className="form-control" style="background-color: black; color: white;"
+                                              placeholder="AUN NO FUNCIONA"></textarea>
+                    </div>
+                    <div className="col-12">
+                        <div className="row mt-2">
+                            <div className="col-8">
+                                <div className="row">
+                                    <div className="col-4 text-left text-md-right text-lg-right">
+                                        <label htmlFor="commet" id="resaltar">Comentar como:</label>
+                                    </div>
+
+                                    <div className="col-8 text-left">
+                                        <select id="identityMenu" name="commet" dir="ltr"
+                                                onChange="BLOG_CMT_onSelectorChange()">
+                                            <option value="NONE" disabled="">Seleccionar perfil...</option>
+                                            <option value="CURRENT">Cuenta de correo</option>
+                                            <option value="NAMEURL">Nombre/URL</option>
+                                            <option value="ANON">Anónimo</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div className="col-4 text-right">
+                                <button type="button" id="Enviar" className="btn btn-warning">Comentar</button>
+                                <button type="button" id="Enviar" className="btn btn-warning"
+                                        onClick="Cerrar()">Cerrar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <!--comentario Display: none-->
+
+
+    <!--Botones de accion del Display: none-->
+    <div className="col-12" id="BotonesDisplay">
+        <div className="row">
+            <div className="col-4">
+                <div className="row">
+                    <div className="col-4 text-right" onClick="RespuestaGenerar()">
+                        <img src="../../img/flechabaja.png" style="height: 25px; width: 25px;"
+                             id="imagen-cambiante">
+                    </div>
+                    <div className="col-8" onClick="RespuestaGenerar()">
+                        <span style="color: aquamarine; right: 25px">Ver Respuestas</span>
+                    </div>
+                </div>
+            </div>
+            <div className="col-8 text-right">
+                                    <span style="display:none;" id="botton_cierre_respuestas"
+                                          onClick="CerrarRespuestas()">Cerrar Respuestas</span>
+            </div>
+
+        </div>
+    </div>
+    <!--Botones de accion del Display: none-->
+
+
+    <!--Respuestas Display: none-->
+    <div id="resultado_respuestas" className="container" style="display:none;">
+
+        <div className="row">
+            <div className="col-2">
+            </div>
+            <div className="col-10">
+                <div className="row">
+                    <div className="col-8">
+                        <span id="usuario">Usuario</span> &nbsp;&nbsp;
+                        <span id="hora">22:00</span>
+                    </div>
+                    <div className="col-4 text-right">
+                        <span id="fecha">22/10/1998</span>
+                    </div>
+
+                    <div className="col-12 mb-2">
+                                      <span style="color: white">
+                                        Es gracioso, estando en Platzi es dificil evitar picar aquí y hallá en los cursos.
+                                        Lo que es benéfico porque terminas sabiendo de todo un poco y se expanden tus horizontes.
+                                      </span>
+                    </div>
+
+                    <div className="col-8">
+                        <input type="image" style="height: 25px; width: 25px;" alt="Login"
+                               src="../../img/responder.png" onClick="Responder()">
+
+                            <!--sistema de me Likes-->
+                            <img src="../../img/corazonRojo.png" id="imagen-cambiante" onClick="Likes">
+                                <img src="../../img/corazon.png" id="imagen-cambiante" className="cambio">
+                                    <div style="left: 70px; top: 1px;position: absolute" id="resaltar">85</div>
+                    </div>
+                    <div className="col-4 text-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--Respuestas Display: none-->
+
+</div>
+
+/*---------comentariosa en html------------------*/
+
+
 fetch('http://localhost:8080/Bayiva/api/respuestasA/getByCommentId/'+1, {
     method: 'GET',
 
