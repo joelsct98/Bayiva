@@ -958,7 +958,7 @@ function Generar() {
                 "                                  <div class=\"col-12\">\n" +
                 "                                    <textarea class=\"form-control\" id=\"validationTextarea" + CommentId + "\" " +
                 "                                               style=\"background-color: black; color: white;\"\n" +
-                "                                           placeholder=\"AUN NO FUNCIONA\" required></textarea>\n" +
+                "                                           placeholder=\"Dime lo que piensas...\" required></textarea>\n" +
                 "                                  </div>\n" +
                 "                                  <div class=\"col-12\">\n" +
                 "                                    <div class=\"row mt-2\">\n" +
