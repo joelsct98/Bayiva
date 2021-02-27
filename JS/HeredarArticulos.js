@@ -161,7 +161,6 @@ function generarLikes(IdEnviado){
         ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        alert("Gracias!");
         ////console.log(datos);
     });
 }
