@@ -65,29 +65,24 @@ function Enviar() {
         }
         //console.log("----Numero total comment----");
 
-        NumeroComentariosTotal = cajita.length;
+        var NumeroComentariosTotal=0
+        for (var i = cajita.length - 1; i >= 0; i--) {
+            //console.log(cajita[i].commentsAId);
+            if (cajita[i].commentsAId > NumeroComentariosTotal) {
+                NumeroComentariosTotal = cajita[i].commentsAId;
+            }
+        }
         //console.log(NumeroComentariosTotal);
 
         //console.log("----Numero total comment----");
 
 
         var Usuario = document.getElementById('identityMenu');
-        //console.log("User: "+Usuario.value);
-
-
 
         var resul = document.getElementById('validationTextarea');
-        //console.log("Contenido: "+resul.value);
 
         var d = new Date();
         var meses= d.getMonth()+1;
-
-        //console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
-        //console.log(d.getHours()+":"+d.getMinutes());
-        //console.log(meses+1);
-
-        ////console.log(NumeroComentarios+1);
-        //console.log(NumeroComentariosTotal+1);
 
         IdEnviado=NumeroComentariosTotal+1;
         var IdActual=pair[1];
@@ -123,11 +118,14 @@ function Enviar() {
             var datos = JSON.parse(arr);
             ////console.log(datos);
             generarLikes(IdEnviado);
-        });
-        alert("Hecho!");
-        return resul;
-    });
+            var textArea=$("#validationTextarea")
+            var usuarios=$("#identityMenu")
 
+            textArea.val("")
+            usuarios.val("")
+            alert("!Hecho¡")
+        });
+    });
 };
 
 function generarLikes(IdEnviado){
