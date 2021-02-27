@@ -57,7 +57,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         cajita.push(item);
         ////console.log(item);
     }
-
+/*
     //console.log("----array----");
     for(var i= 0; i<=cajita.length-1; i++){
 
@@ -78,12 +78,12 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
 
         container.appendChild(divContenedor);
 
-        /*
+        /!*
             var divContenedorRow = document.createElement("div");
             divContenedorRow.setAttribute("class","row");
 
             divContenedorDentro.appendChild(divContenedorRow);
-        */
+        *!/
 
     }
 
@@ -111,7 +111,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         container.innerHTML+=cajita[i].title;
         container.innerHTML+=cajita[i].description;
         container.innerHTML+=cajita[i].link;
-    }
+    }*/
     /*
         for(var i= 0; i<=cajita.length-1; i++){
             var divContenedorRow = document.createElement("div");
