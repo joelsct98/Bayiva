@@ -5,7 +5,7 @@ function Suscribirse() {
     console.log("User: "+Usuario.value);
 
 
-    fetch('http://localhost:8080/Bayiva/api/Suscribete/save', {
+    fetch('http://bayiva2.herokuapp.com/Bayiva/api/Suscribete/save', {
         method: 'POST',
         headers:{
             'content-type':'application/json',
@@ -36,7 +36,7 @@ function Suscribirse() {
 
 
 /*------------------Para sacar el numero total de Suscripciones----------------------*/
-fetch('http://localhost:8080/Bayiva/api/Suscribete/all', {
+fetch('http://bayiva2.herokuapp.com/Bayiva/api/Suscribete/all', {
     method: 'GET',
 
 }).then(function(response) {
@@ -98,7 +98,7 @@ function Enviar_correo(){
 
     console.log(contenido);
 
-    fetch('http://localhost:8080/Bayiva/api/email/send', {
+    fetch('http://bayiva2.herokuapp.com/Bayiva/api/email/send', {
         method: 'POST',
         headers:{
             'content-type':'application/json',

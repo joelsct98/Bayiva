@@ -8,7 +8,7 @@ function Cambio(link, ArticleId) {
 };
 
 
-fetch('http://localhost:8080/Bayiva/api/articles/all',{
+fetch('http://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
     method: 'GET',
     headers:{
         'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2VsIiwiaWF0IjoxNjA4ODA1NzE1LCJleHAiOjE2MDg4NDE3MTV9.68Ymg-mjcPAHZY7D0f8ohxyPVZOwyV5kbp7YNtv8r90'
@@ -223,7 +223,7 @@ fetch('http://localhost:8080/Bayiva/api/articles/all',{
             contenido3.appendChild(pregunta);
         }
 
-        fetch('http://localhost:8080/rest/Opciones/getTodosOpciones', {
+        fetch('http://bayiva2.herokuapp.com/rest/Opciones/getTodosOpciones', {
             method: 'GET',
 
         }).then(function(response) {
