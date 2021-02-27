@@ -37,41 +37,12 @@ function Cerrar(Id) {
 };
 
 function Enviar() {
-    var Usuario = document.getElementById('identityMenu');
-    //console.log("User: "+Usuario.value);
 
+    /*-----------------rescursos---------------*/
 
-
-    var resul = document.getElementById('validationTextarea');
-    //console.log("Contenido: "+resul.value);
-
-    var d = new Date();
-    var meses= d.getMonth()+1;
-
-    //console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
-    //console.log(d.getHours()+":"+d.getMinutes());
-    //console.log(meses+1);
-
-    ////console.log(NumeroComentarios+1);
-    //console.log(NumeroComentariosTotal+1);
-
-    IdEnviado=NumeroComentariosTotal+1;
-    var IdActual=pair[1];
-    fetch('http://localhost:8080/Bayiva/api/comentariosA/save', {
-        method: 'POST',
-        headers:{
-            'content-type':'application/json',
-        },
-        body:JSON.stringify({
-            "commentsAId": NumeroComentariosTotal+1,
-            "articleId": IdActual,
-            "user": Usuario.value,
-            "date":d.getDate()+"/"+meses+"/"+d.getFullYear() ,
-            "hour": d.getHours()+":"+d.getMinutes(),
-            "description": resul.value
-            //"articles": articles
-
-        })
+    fetch('http://localhost:8080/Bayiva/api/comentariosA/all', {
+        method: 'GET',
+        //body:JSON(1)
 
     }).then(function(response) {
         if(response.ok) {
@@ -83,19 +54,80 @@ function Enviar() {
         }
     }).then(function (preguntas) {
 
-        var arr=preguntas;
-        ////console.log(arr);
+        var arr = preguntas;
 
         var datos = JSON.parse(arr);
-        ////console.log(datos);
-        generarLikes(IdEnviado);
+
+        var cajita = [];
+        for (let item of datos) {
+
+            cajita.push(item);
+        }
+        //console.log("----Numero total comment----");
+
+        NumeroComentariosTotal = cajita.length;
+        //console.log(NumeroComentariosTotal);
+
+        //console.log("----Numero total comment----");
+        var Usuario = document.getElementById('identityMenu');
+        //console.log("User: "+Usuario.value);
+
+
+
+        var resul = document.getElementById('validationTextarea');
+        //console.log("Contenido: "+resul.value);
+
+        var d = new Date();
+        var meses= d.getMonth()+1;
+
+        //console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
+        //console.log(d.getHours()+":"+d.getMinutes());
+        //console.log(meses+1);
+
+        ////console.log(NumeroComentarios+1);
+        //console.log(NumeroComentariosTotal+1);
+
+        IdEnviado=NumeroComentariosTotal+1;
+        var IdActual=pair[1];
+        fetch('http://localhost:8080/Bayiva/api/comentariosA/save', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json',
+            },
+            body:JSON.stringify({
+                "commentsAId": NumeroComentariosTotal+1,
+                "articleId": IdActual,
+                "user": Usuario.value,
+                "date":d.getDate()+"/"+meses+"/"+d.getFullYear() ,
+                "hour": d.getHours()+":"+d.getMinutes(),
+                "description": resul.value
+                //"articles": articles
+
+            })
+
+        }).then(function(response) {
+            if(response.ok) {
+                return response.text()
+                alert("Error en la llamada Ajax");
+
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+        }).then(function (preguntas) {
+
+            var arr=preguntas;
+            ////console.log(arr);
+
+            var datos = JSON.parse(arr);
+            ////console.log(datos);
+            generarLikes(IdEnviado);
+        });
+
+        //NumeroComentariosTotal=NumeroComentariosTotal+1;
+
+        return resul;
     });
 
-
-
-    //NumeroComentariosTotal=NumeroComentariosTotal+1;
-
-    return resul;
 };
 
 function generarLikes(IdEnviado){
@@ -1123,35 +1155,3 @@ function likesGeneradosComentarios(){
     });
 }
 
-/*-----------------rescursos---------------*/
-
-fetch('http://localhost:8080/Bayiva/api/comentariosA/all', {
-    method: 'GET',
-    //body:JSON(1)
-
-}).then(function(response) {
-    if(response.ok) {
-        return response.text()
-        alert("Error en la llamada Ajax");
-
-    } else {
-        throw "Error en la llamada Ajax";
-    }
-}).then(function (preguntas) {
-
-    var arr = preguntas;
-
-    var datos = JSON.parse(arr);
-
-    var cajita = [];
-    for (let item of datos) {
-
-        cajita.push(item);
-    }
-    //console.log("----Numero total comment----");
-
-    NumeroComentariosTotal = cajita.length;
-    //console.log(NumeroComentariosTotal);
-
-    //console.log("----Numero total comment----");
-});
