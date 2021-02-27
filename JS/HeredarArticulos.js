@@ -57,7 +57,7 @@ function Enviar() {
 
     IdEnviado=NumeroComentariosTotal+1;
     var IdActual=pair[1];
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/comentariosA/save', {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/save', {
         method: 'POST',
         headers:{
             'content-type':'application/json',
@@ -105,7 +105,7 @@ function generarLikes(IdEnviado){
     console.log(loko);
     console.log("--------pair[1]----------");
     /*---------crear el sistema de likes en el comentarios-------------*/
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
         method: 'POST',
         headers:{
             'content-type':'application/json',
@@ -155,7 +155,7 @@ function RespuestaGenerar(Id){
     /*-----------------generando el respuestas------------------*/
 
 
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/respuestasA/getByCommentId/'+Id, {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/respuestasA/getByCommentId/'+Id, {
         method: 'GET',
         //body:JSON(1)
 
@@ -420,7 +420,7 @@ function ComentarRespuesta(Id){
 
     //console.log(Respuestanum);
 
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/respuestasA/save', {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/respuestasA/save', {
         method: 'POST',
         headers:{
             'content-type':'application/json',
@@ -459,7 +459,7 @@ function ComentarRespuesta(Id){
 
 
 /*-----------------Systema de Likes------------------*/
-fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/getByArticlesId/'+pair[1], {
+fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/getByArticlesId/'+pair[1], {
     method: 'GET',
     //body:JSON(1)
 
@@ -495,7 +495,7 @@ function Likes(){
     numberLikes=numberLikes+1;
     console.log("-----------------Suma----------------------");
     console.log(numberLikes);
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/save', {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/save', {
         method: 'POST',
         headers:{
             'content-type':'application/json',
@@ -538,7 +538,7 @@ function Likes(){
 
 function LikesC(Id){
 
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/getByComentsId/'+Id, {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/getByComentsId/'+Id, {
         method: 'GET',
         //body:JSON(1)
 
@@ -574,7 +574,7 @@ function LikesC(Id){
         console.log("-----------------Suma----------------------");
         console.log(numberLikesComentarios);
 
-        fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
+        fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
             method: 'POST',
             headers:{
                 'content-type':'application/json',
@@ -617,7 +617,7 @@ function LikesC(Id){
 
 
 
-fetch('http://bayiva2.herokuapp.com/Bayiva/api/articles/getByArticlesId/'+pair[1], {
+fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/getByArticlesId/'+pair[1], {
     method: 'GET',
     //body:JSON(1)
 
@@ -645,7 +645,7 @@ fetch('http://bayiva2.herokuapp.com/Bayiva/api/articles/getByArticlesId/'+pair[1
 
 });
 
-fetch('http://bayiva2.herokuapp.com/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
+fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
     method: 'GET',
     //body:JSON(1)
 
@@ -720,7 +720,7 @@ function Generar() {
     Botton_VerRespuestas.setAttribute("style","display:none;width: 100%;");
 
 
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/getByArticleId/'+pair[1], {
         method: 'GET',
         //body:JSON(1)
 
@@ -1033,7 +1033,7 @@ function Generar() {
 
 
         /*----------resultado_respuestas------------------*/
-        fetch('http://bayiva2.herokuapp.com/Bayiva/api/respuestasA/all', {
+        fetch('https://bayiva2.herokuapp.com/Bayiva/api/respuestasA/all', {
             method: 'GET',
             //body:JSON(1)
 
@@ -1072,7 +1072,7 @@ function Generar() {
 function likesGeneradosComentarios(){
 
     /*----------Generar Likes------------------*/
-    fetch('http://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/getByArticlesId/'+pair[1], {
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/getByArticlesId/'+pair[1], {
         method: 'GET',
         //body:JSON(1)
 
@@ -1125,7 +1125,7 @@ function likesGeneradosComentarios(){
 
 /*-----------------rescursos---------------*/
 
-fetch('http://bayiva2.herokuapp.com/Bayiva/api/comentariosA/all', {
+fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/all', {
     method: 'GET',
     //body:JSON(1)
 
