@@ -30,7 +30,7 @@ function Suscribirse() {
 
         var datos = JSON.parse(arr);
         ////console.log(datos);
-        alert("hecho!");
+        alert("Hecho!");
     });
 };
 

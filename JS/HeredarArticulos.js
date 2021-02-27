@@ -124,7 +124,7 @@ function Enviar() {
             ////console.log(datos);
             generarLikes(IdEnviado);
         });
-
+        alert("Hecho!");
         return resul;
     });
 
@@ -163,6 +163,7 @@ function generarLikes(IdEnviado){
         ////console.log(arr);
 
         var datos = JSON.parse(arr);
+        alert("Gracias!");
         ////console.log(datos);
     });
 }
@@ -483,6 +484,8 @@ function ComentarRespuesta(Id){
 
         var datos = JSON.parse(arr);
         ////console.log(datos);
+        alert("Hecho!");
+
     });
 
     //return resul,resul_cierre;
