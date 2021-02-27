@@ -8,7 +8,7 @@ function Cambio(link, ArticleId) {
 };
 
 
-fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
+fetch('http://localhost:8080/Bayiva/api/articles/all',{
     method: 'GET',
     headers:{
         'Authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2VsIiwiaWF0IjoxNjA4ODA1NzE1LCJleHAiOjE2MDg4NDE3MTV9.68Ymg-mjcPAHZY7D0f8ohxyPVZOwyV5kbp7YNtv8r90'
@@ -65,7 +65,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
     }
     console.log("----array----");
 
-    var container = document.getElementById("prueba2");
+/*    var container = document.getElementById("prueba2");
     for(var i= 0; i<=cajita.length-1; i++){
         var divContenedor = document.createElement("div");
         divContenedor.setAttribute("class","row mb-4");
@@ -78,12 +78,6 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
 
         container.appendChild(divContenedor);
 
-        /*
-            var divContenedorRow = document.createElement("div");
-            divContenedorRow.setAttribute("class","row");
-
-            divContenedorDentro.appendChild(divContenedorRow);
-        */
 
     }
 
@@ -111,7 +105,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         container.innerHTML+=cajita[i].title;
         container.innerHTML+=cajita[i].description;
         container.innerHTML+=cajita[i].link;
-    }
+    }*/
     /*
         for(var i= 0; i<=cajita.length-1; i++){
             var divContenedorRow = document.createElement("div");
@@ -223,7 +217,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
             contenido3.appendChild(pregunta);
         }
 
-        fetch('https://bayiva2.herokuapp.com/rest/Opciones/getTodosOpciones', {
+        fetch('http://bayiva2.herokuapp.com/rest/Opciones/getTodosOpciones', {
             method: 'GET',
 
         }).then(function(response) {
