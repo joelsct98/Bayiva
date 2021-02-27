@@ -33,8 +33,23 @@ div[id^='MeGustasArtic']{
 
 }*/
 
-#resaltar2{
-  color: rgb(0, 179, 250);
+#tituloBlog{
+  font-size: 25px;
+  color: #47F018;
+  font-family: 'Times New Roman'
+}
+
+#leyenda{
+  font-size: 15px;
+}
+
+
+#explicacion_aburrida{
+  color: #00CBFE;
+}
+
+#extra{
+  color: #d09d81;
 }
 
 nav .container-fluid .navbar-brand strong{
