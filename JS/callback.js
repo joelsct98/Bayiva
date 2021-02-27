@@ -26,10 +26,10 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         var nombreCues = document.getElementById("nombreCues");
         nombreCues.setAttribute("value",nombre);*/
     var arr=preguntas;
-    //console.log(arr);
+    ////console.log(arr);
 
     var datos = JSON.parse(arr);
-    console.log(datos);  //solo funciona este
+    //console.log(datos);  //solo funciona este
 
     /*
         Podemos usar esto para poder filtrar solo 1
@@ -42,7 +42,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         var newArr = datos.filter(function (el){
             return el
         });
-        console.log(newArr);
+        //console.log(newArr);
      */
 
     var cajita = [];
@@ -52,18 +52,18 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
         -del objeto en cuestion
 
         cajita.push(item.texto);
-        console.log(item.texto);
+        //console.log(item.texto);
         */
         cajita.push(item);
-        //console.log(item);
+        ////console.log(item);
     }
 
-    console.log("----array----");
+    //console.log("----array----");
     for(var i= 0; i<=cajita.length-1; i++){
 
-        console.log(cajita[i]);
+        //console.log(cajita[i]);
     }
-    console.log("----array----");
+    //console.log("----array----");
 
     var container = document.getElementById("prueba2");
     for(var i= 0; i<=cajita.length-1; i++){
@@ -106,7 +106,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
     for(var i= 0; i<=cajita.length-1; i++){
         var container = document.getElementById("row"+i);
 
-        console.log()
+        //console.log()
         container.innerHTML+=cajita[i].topic;
         container.innerHTML+=cajita[i].title;
         container.innerHTML+=cajita[i].description;
@@ -241,7 +241,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
                 var cajitaOpciones = [];
                 var arrO=opciones;
                 var datosO = JSON.parse(arrO);
-                console.log(datosO);
+                //console.log(datosO);
                 var cont=0;
                 var contInput=0;
 
@@ -254,22 +254,22 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
 
                     for(let item2 of newArr){
                         cajitaOpciones.push(item2.texto);
-                        console.log(item2.texto);
-                        console.log(item2.preguntaId.cuestionarioId.titulo);
+                        //console.log(item2.texto);
+                        //console.log(item2.preguntaId.cuestionarioId.titulo);
                         cajitaCuestionariosId.push(item2.preguntaId.cuestionarioId.titulo);
-                        //console.log(nombre);
+                        ////console.log(nombre);
                     }
-                    console.log("--------");
+                    //console.log("--------");
 
                 }
-    //console.log(cajitaCuestionariosId.length);
-                console.log("--------------------------");
+    ////console.log(cajitaCuestionariosId.length);
+                //console.log("--------------------------");
 
                 for(var i= 0; i<=cajitaCuestionariosId.length-1; i++){
-                    //console.log(cajitaCuestionariosId[i]);
+                    ////console.log(cajitaCuestionariosId[i]);
 
                     if(cajitaCuestionariosId[i]==nombre){
-                        console.log("-------verdaderos------");
+                        //console.log("-------verdaderos------");
                         verdaderasOpciones.push(cajitaOpciones[i]);
                     }
 
@@ -277,7 +277,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
 
 
                 for(var i= 0; i<=verdaderasOpciones.length-1; i++){
-                    console.log(verdaderasOpciones[i]);
+                    //console.log(verdaderasOpciones[i]);
                 }
 
                 var supercont=0;
@@ -290,11 +290,11 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/all',{
 
                     for(let item2 of newArr){
                         cajitaOpciones.push(item2.texto);
-                        console.log(item2.texto);
-                        console.log(item2.preguntaId.cuestionarioId.cuestionarioId);
+                        //console.log(item2.texto);
+                        //console.log(item2.preguntaId.cuestionarioId.cuestionarioId);
                         cajitaCuestionariosId.push(item2.texto);
                     }
-                    console.log("--------");
+                    //console.log("--------");
 
 
                     var contenido4 = document.getElementById("col-10-"+i);

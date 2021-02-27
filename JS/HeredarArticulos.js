@@ -3,7 +3,7 @@ var query = window.location.search.substring(1);
 var vars = query.split("&");
 for (var i=0; i < vars.length; i++) {
     var pair = vars[i].split("=");
-    console.pair;
+    //console.pair;
 
 }
 
@@ -37,41 +37,12 @@ function Cerrar(Id) {
 };
 
 function Enviar() {
-    var Usuario = document.getElementById('identityMenu');
-    console.log("User: "+Usuario.value);
 
+    /*-----------------rescursos---------------*/
 
-
-    var resul = document.getElementById('validationTextarea');
-    console.log("Contenido: "+resul.value);
-
-    var d = new Date();
-    var meses= d.getMonth()+1;
-
-    console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
-    console.log(d.getHours()+":"+d.getMinutes());
-    console.log(meses+1);
-
-    //console.log(NumeroComentarios+1);
-    console.log(NumeroComentariosTotal+1);
-
-    IdEnviado=NumeroComentariosTotal+1;
-    var IdActual=pair[1];
-    fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/save', {
-        method: 'POST',
-        headers:{
-            'content-type':'application/json',
-        },
-        body:JSON.stringify({
-            "commentsAId": NumeroComentariosTotal+1,
-            "articleId": IdActual,
-            "user": Usuario.value,
-            "date":d.getDate()+"/"+meses+"/"+d.getFullYear() ,
-            "hour": d.getHours()+":"+d.getMinutes(),
-            "description": resul.value
-            //"articles": articles
-
-        })
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/all', {
+        method: 'GET',
+        //body:JSON(1)
 
     }).then(function(response) {
         if(response.ok) {
@@ -83,27 +54,88 @@ function Enviar() {
         }
     }).then(function (preguntas) {
 
-        var arr=preguntas;
-        //console.log(arr);
+        var arr = preguntas;
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
-        generarLikes(IdEnviado);
+
+        var cajita = [];
+        for (let item of datos) {
+
+            cajita.push(item);
+        }
+        //console.log("----Numero total comment----");
+
+        NumeroComentariosTotal = cajita.length;
+        //console.log(NumeroComentariosTotal);
+
+        //console.log("----Numero total comment----");
+
+
+        var Usuario = document.getElementById('identityMenu');
+        //console.log("User: "+Usuario.value);
+
+
+
+        var resul = document.getElementById('validationTextarea');
+        //console.log("Contenido: "+resul.value);
+
+        var d = new Date();
+        var meses= d.getMonth()+1;
+
+        //console.log(d.getDate()+"/"+meses+"/"+d.getFullYear());
+        //console.log(d.getHours()+":"+d.getMinutes());
+        //console.log(meses+1);
+
+        ////console.log(NumeroComentarios+1);
+        //console.log(NumeroComentariosTotal+1);
+
+        IdEnviado=NumeroComentariosTotal+1;
+        var IdActual=pair[1];
+        fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/save', {
+            method: 'POST',
+            headers:{
+                'content-type':'application/json',
+            },
+            body:JSON.stringify({
+                "commentsAId": NumeroComentariosTotal+1,
+                "articleId": IdActual,
+                "user": Usuario.value,
+                "date":d.getDate()+"/"+meses+"/"+d.getFullYear() ,
+                "hour": d.getHours()+":"+d.getMinutes(),
+                "description": resul.value
+                //"articles": articles
+
+            })
+
+        }).then(function(response) {
+            if(response.ok) {
+                return response.text()
+                alert("Error en la llamada Ajax");
+
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+        }).then(function (preguntas) {
+
+            var arr=preguntas;
+            ////console.log(arr);
+
+            var datos = JSON.parse(arr);
+            ////console.log(datos);
+            generarLikes(IdEnviado);
+        });
+
+        return resul;
     });
 
-
-
-    //NumeroComentariosTotal=NumeroComentariosTotal+1;
-
-    return resul;
 };
 
 function generarLikes(IdEnviado){
-    console.log("--------pair[1]----------");
-    //console.log(pair[1]);
+    //console.log("--------pair[1]----------");
+    ////console.log(pair[1]);
     loko=pair[1];
-    console.log(loko);
-    console.log("--------pair[1]----------");
+    //console.log(loko);
+    //console.log("--------pair[1]----------");
     /*---------crear el sistema de likes en el comentarios-------------*/
     fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
         method: 'POST',
@@ -128,10 +160,10 @@ function generarLikes(IdEnviado){
     }).then(function (preguntas) {
 
         var arr=preguntas;
-        //console.log(arr);
+        ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
+        ////console.log(datos);
     });
 }
 
@@ -170,24 +202,24 @@ function RespuestaGenerar(Id){
     }).then(function (preguntas) {
 
         var arr = preguntas;
-        //console.log(arr);
+        ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
+        ////console.log(datos);
 
         var cajita = [];
         for (let item of datos) {
             cajita.push(item);
         }
 
-        console.log("----array----");
+        //console.log("----array----");
 
         for (var i = cajita.length - 1; i >= 0; i--) {
 
-            console.log(cajita[i]);
+            //console.log(cajita[i]);
         }
-        console.log("----array----");
-        console.log(Id);
+        //console.log("----array----");
+        //console.log(Id);
 
         var container = document.getElementById("resultado_respuestas"+Id);
 
@@ -402,23 +434,23 @@ function CerrarRespuestas(Id){
 /*-------Para generar las respuesta en cada comentarios---------*/
 function ComentarRespuesta(Id){
     var Usuario = document.getElementById('identityMenu'+Id);
-    console.log("User: "+Usuario.value);
+    //console.log("User: "+Usuario.value);
 
     var resul = document.getElementById('validationTextarea'+Id);
-    console.log("Contenido: "+resul.value);
+    //console.log("Contenido: "+resul.value);
 
     var d = new Date();
-    console.log(d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate());
-    console.log(d.getHours()+":"+d.getMinutes());
-    //console.log(Numero_Respuestas+1);
+    //console.log(d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate());
+    //console.log(d.getHours()+":"+d.getMinutes());
+    ////console.log(Numero_Respuestas+1);
 
     var meses= d.getMonth()+1;
 
     var Respuestanum= Numero_Respuestas+1;
-    console.log(Respuestanum);
-    console.log(Id);
-
     //console.log(Respuestanum);
+    //console.log(Id);
+
+    ////console.log(Respuestanum);
 
     fetch('https://bayiva2.herokuapp.com/Bayiva/api/respuestasA/save', {
         method: 'POST',
@@ -447,10 +479,10 @@ function ComentarRespuesta(Id){
     }).then(function (preguntas) {
 
         var arr=preguntas;
-        //console.log(arr);
+        ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
+        ////console.log(datos);
     });
 
     //return resul,resul_cierre;
@@ -484,7 +516,7 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/getByArticlesI
 
     numberLikes = cajita[0].numberLikes;
 
-    console.log(numberLikes);
+    //console.log(numberLikes);
     var aumentar_likes = document.getElementById("MeGustasArticle");
 
     aumentar_likes.innerHTML=""+numberLikes;
@@ -493,8 +525,8 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/getByArticlesI
 function Likes(){
 
     numberLikes=numberLikes+1;
-    console.log("-----------------Suma----------------------");
-    console.log(numberLikes);
+    //console.log("-----------------Suma----------------------");
+    //console.log(numberLikes);
     fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/save', {
         method: 'POST',
         headers:{
@@ -519,10 +551,10 @@ function Likes(){
     }).then(function (preguntas) {
 
         var arr=preguntas;
-        //console.log(arr);
+        ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
+        ////console.log(datos);
     });
 
     var aumentar_likes = document.getElementById("MeGustasArticle");
@@ -563,7 +595,7 @@ function LikesC(Id){
 
         numberLikesComentarios = cajita[0].numberLikes;
 
-        console.log(numberLikesComentarios);
+        //console.log(numberLikesComentarios);
         /*
         var aumentar_likes = document.getElementById("MeGustasArticle");
 
@@ -571,8 +603,8 @@ function LikesC(Id){
         */
 
         numberLikesComentarios=numberLikesComentarios+1;
-        console.log("-----------------Suma----------------------");
-        console.log(numberLikesComentarios);
+        //console.log("-----------------Suma----------------------");
+        //console.log(numberLikesComentarios);
 
         fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasComentarios/save', {
             method: 'POST',
@@ -597,10 +629,10 @@ function LikesC(Id){
         }).then(function (preguntas) {
 
             var arr=preguntas;
-            //console.log(arr);
+            ////console.log(arr);
 
             var datos = JSON.parse(arr);
-            //console.log(datos);
+            ////console.log(datos);
         });
 
         var aumentar_likes = document.getElementById("MeGustasArticle"+Id);
@@ -632,10 +664,10 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/articles/getByArticlesId/'+pair[
 }).then(function (preguntas) {
 
     var arr=preguntas;
-    //console.log(arr);
+    ////console.log(arr);
 
     var datos = JSON.parse(arr);
-    console.log(datos);
+    //console.log(datos);
 
 
     var cajita = [];
@@ -671,19 +703,19 @@ fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/getByArticleId/'+pa
 
     NumeroComentarios = cajita.length;
 
-    console.log("----array----");
+    //console.log("----array----");
 
     for (var i = cajita.length - 1; i >= 0; i--) {
 
-        console.log(cajita[i]);
+        //console.log(cajita[i]);
     }
-    console.log("----array----");
+    //console.log("----array----");
 
     var botton_carga = document.getElementById("NumeroDeComentarios");
 
     botton_carga.innerHTML="Comentarios: "+NumeroComentarios;
 
-    console.log(NumeroComentarios);
+    //console.log(NumeroComentarios);
 });
 
 function CerrarLoGenerar(){
@@ -735,10 +767,10 @@ function Generar() {
     }).then(function (preguntas) {
 
         var arr = preguntas;
-        //console.log(arr);
+        ////console.log(arr);
 
         var datos = JSON.parse(arr);
-        //console.log(datos);
+        ////console.log(datos);
 
         var cajita = [];
         for (let item of datos) {
@@ -747,17 +779,17 @@ function Generar() {
             -del objeto en cuestion
 
             cajita.push(item.texto);
-            console.log(item.texto);
+            //console.log(item.texto);
             */
             cajita.push(item);
-            //console.log(item);
+            ////console.log(item);
         }
 
-        console.log("---------------------------------------");
+        //console.log("---------------------------------------");
         articles = cajita[0].articles;
 
-        //console.log(articles);
-        console.log("---------------------------------------");
+        ////console.log(articles);
+        //console.log("---------------------------------------");
 
         NumeroComentarios = cajita.length;
 
@@ -1056,10 +1088,10 @@ function Generar() {
                 cajita.push(item);
             }
 
-            console.log("-----------------Numero_Respuestas----------------------");
+            //console.log("-----------------Numero_Respuestas----------------------");
             Numero_Respuestas = cajita.length;
-            console.log(Numero_Respuestas);
-            console.log("------------------Numero_Respuestas---------------------");
+            //console.log(Numero_Respuestas);
+            //console.log("------------------Numero_Respuestas---------------------");
         });
         /*----------resultado_respuestas------------------*/
 
@@ -1096,62 +1128,29 @@ function likesGeneradosComentarios(){
             cajita.push(item);
         }
 
-        console.log("----array----");
+        //console.log("----array----");
         for (var i = cajita.length - 1; i >= 0; i--) {
 
-            console.log(cajita[i]);
+            //console.log(cajita[i]);
         }
-        console.log("----array----");
+        //console.log("----array----");
 
-        console.log("----Numero de cajita----");
-        console.log(cajita.length);
+        //console.log("----Numero de cajita----");
+        //console.log(cajita.length);
 
         for (var j = cajita.length - 1; j >= 0; j--) {
             var MiLikes = document.getElementById("MeGustasArticle" + cajita[j].commentsId);
-            //console.log(cajita[j].numberLikes);
-            //console.log(cajita[j].commentsId);
+            ////console.log(cajita[j].numberLikes);
+            ////console.log(cajita[j].commentsId);
             //var span = document.createElement("span");
             MiLikes.innerHTML=cajita[j].numberLikes;
 
             //MiLikes.appendChild(span);
             /*
             if (cajita[j].commentsId==j){
-                console.log("Entro!");
+                //console.log("Entro!");
             }
             */
         }
     });
 }
-
-/*-----------------rescursos---------------*/
-
-fetch('https://bayiva2.herokuapp.com/Bayiva/api/comentariosA/all', {
-    method: 'GET',
-    //body:JSON(1)
-
-}).then(function(response) {
-    if(response.ok) {
-        return response.text()
-        alert("Error en la llamada Ajax");
-
-    } else {
-        throw "Error en la llamada Ajax";
-    }
-}).then(function (preguntas) {
-
-    var arr = preguntas;
-
-    var datos = JSON.parse(arr);
-
-    var cajita = [];
-    for (let item of datos) {
-
-        cajita.push(item);
-    }
-    console.log("----Numero total comment----");
-
-    NumeroComentariosTotal = cajita.length;
-    console.log(NumeroComentariosTotal);
-
-    console.log("----Numero total comment----");
-});
