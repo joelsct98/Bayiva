@@ -221,7 +221,16 @@ color: white;
   overflow:hidden;
 }
 
+/*tabs en blogs*/
+.nav-tabs a{
+  color: orange;
+}
 
+/*tabs en blogs*/
+#enProgreso{
+  color: rgb(109, 77, 255);
+  font-size: 20px;
+}
 
 /*------------------comentariosGenerados------------------*/
 #usuario{
