@@ -10,7 +10,7 @@ var confirmSubmit = false
 
 $(document).ready(function () {
     initVars.call(this);
-    if(pair[1]=="true"){
+    if(pair[1]==="true"){
         console.log("hola")
         $elems.index.nav_articulos_tab.attr("class", "nav-item nav-link");
         $elems.index.nav_articulos_tab.attr("aria-selected", false);
@@ -19,10 +19,39 @@ $(document).ready(function () {
         $elems.index.nav_articulos.attr("class", "tab-pane fade");
         $elems.index.nav_tutoriales.attr("class", "tab-pane fade active show");
     }
-/*    $elems.index.link_tutoriales.click(function() {
-        $( "#target" ).click();
 
-    });*/
+    /*    $elems.index.link_tutoriales.click(function() {
+            $( "#target" ).click();
+
+        });*/
+
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/Suscribete/save', {
+        method: 'POST',
+        headers:{
+            'content-type':'application/json',
+        },
+        body:JSON.stringify({
+            "subscribeId": NumeroSuscripciones+1,
+            "email": Usuario.value
+        })
+
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
+
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
+
+        var arr=preguntas;
+        ////console.log(arr);
+
+        var datos = JSON.parse(arr);
+        ////console.log(datos);
+        alert("Hecho!");
+    });
 
 });
 
