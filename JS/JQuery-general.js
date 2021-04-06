@@ -24,6 +24,7 @@ $(document).ready(function () {
             $( "#target" ).click();
 
         });*/
+/*
 
     fetch('https://bayiva2.herokuapp.com/Bayiva/api/Suscribete/save', {
         method: 'POST',
@@ -52,6 +53,7 @@ $(document).ready(function () {
         ////console.log(datos);
         alert("Hecho!");
     });
+*/
 
 });
 
