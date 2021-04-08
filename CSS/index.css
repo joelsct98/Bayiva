@@ -176,9 +176,27 @@ figcaption {
   color: white;
 }
 
-#contenido .container-fluid .row .col-12 p{  
+#contenido .container-fluid .row .col-12 p{
   font-size: 18px;
   color: white;
+}
+
+#contenido .container-fluid .row .col-12 p a{
+  color: rgb(109, 77, 255);
+  font-size: 25px;
+}
+#contenido .container-fluid .row .col-12 a{
+  color: rgb(109, 77, 255);
+  font-size: 25px;
+}
+
+#lista_articulos ul{
+  color: white;
+  font-size: 18px;
+}
+#lista_articulos ul li img{
+  width: 250px;
+  height: 500px;
 }
 
 #contenido .container h3 {  
