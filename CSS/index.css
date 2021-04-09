@@ -171,7 +171,7 @@ figcaption {
   color: white;
 }
 
-#contenido .container-fluid p{  
+#contenido .container-fluid p{
   font-size: 40px;
   color: white;
 }
@@ -179,24 +179,6 @@ figcaption {
 #contenido .container-fluid .row .col-12 p{
   font-size: 18px;
   color: white;
-}
-
-#contenido .container-fluid .row .col-12 p a{
-  color: rgb(109, 77, 255);
-  font-size: 25px;
-}
-#contenido .container-fluid .row .col-12 a{
-  color: rgb(109, 77, 255);
-  font-size: 25px;
-}
-
-#lista_articulos ul{
-  color: white;
-  font-size: 18px;
-}
-#lista_articulos ul li img{
-  width: 250px;
-  height: 500px;
 }
 
 #contenido .container h3 {  
@@ -249,7 +231,30 @@ color: white;
   color: rgb(109, 77, 255);
   font-size: 20px;
 }
+/*------------------articulos------------------*/
 
+#contenido .container-fluid .row .col-12 p a{
+  color: rgb(109, 77, 255);
+  font-size: 25px;
+}
+#contenido .container-fluid .row .col-12 a{
+  color: rgb(109, 77, 255);
+  font-size: 25px;
+}
+
+#lista_articulos ul{
+  color: white;
+  font-size: 18px;
+}
+#lista_articulos ul li img{
+  width: 250px;
+  height: 500px;
+}
+
+#mostrar{
+  color: #2283F3;
+  font-size: 20px;
+}
 /*------------------comentariosGenerados------------------*/
 #usuario{
   color: #97c93e;

@@ -561,7 +561,46 @@ function Likes(){
 
     aumentar_likes.innerHTML=""+numberLikes;
 
-        //botton_carga.innerHTML="Comentarios: "+NumeroComentarios;
+}
+
+function Likes(id){
+
+    numberLikes=numberLikes+1;
+    //console.log("-----------------Suma----------------------");
+    //console.log(numberLikes);
+    fetch('https://bayiva2.herokuapp.com/Bayiva/api/megustasArticulos/save', {
+        method: 'POST',
+        headers:{
+            'content-type':'application/json',
+        },
+        body:JSON.stringify({
+            "likesArticleId": id,
+            "articleId": id,
+            "numberLikes": numberLikes,
+            "numberOption_1": 1,
+            "numberOption_2": 1
+        })
+
+    }).then(function(response) {
+        if(response.ok) {
+            return response.text()
+            alert("Error en la llamada Ajax");
+
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    }).then(function (preguntas) {
+
+        var arr=preguntas;
+        ////console.log(arr);
+
+        var datos = JSON.parse(arr);
+        ////console.log(datos);
+    });
+
+    var aumentar_likes = document.getElementById("MeGustasArticle");
+
+    aumentar_likes.innerHTML=""+numberLikes;
 
 }
 
