@@ -22,13 +22,12 @@ new Vue({
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Proyectos Realizados
+                  Servicios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../index.html#Proyectos">CookTimer</a>
-                  <a class="dropdown-item" href="../index.html#Proyectos">Servicio Web Spring</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="../index.html#Proyectos">.Net</a>
+                  <a class="dropdown-item" href="../index.html#Proyectos">Crear Paginas Web</a>
+                  <a class="dropdown-item" href="../index.html#Proyectos">Servicio Técnico Personalizado </a>
+                
                 </div>
               </li>
               <li class="nav-item">
@@ -64,13 +63,12 @@ new Vue({
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Proyectos Realizados
+                  Servicios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="..\\..\\index.html#Proyectos">CookTimer</a>
-                  <a class="dropdown-item" href="..\\..\\index.html#Proyectos">Servicio Web Spring</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="..\\..\\index.html#Proyectos">.Net</a>
+                  <a class="dropdown-item" href="..\\..\\index.html#Proyectos">Crear Paginas Web</a>
+                  <a class="dropdown-item" href="..\\..\\index.html#Proyectos">Servicio Técnico Personalizado </a>
+                  
                 </div>
               </li>
               <li class="nav-item">
@@ -119,13 +117,12 @@ new Vue({
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Proyectos Realizados
+                    Servicios
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#Proyectos">CookTimer</a>
-                    <a class="dropdown-item" href="#Proyectos">Servicio Web Spring</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#Proyectos">.Net</a>
+                    <a class="dropdown-item" href="#Proyectos">Crear Paginas Web</a>
+                    <a class="dropdown-item" href="#Proyectos">Servicio Técnico Personalizado </a>
+                   
                   </div>
                 </li>
                 <li class="nav-item">
