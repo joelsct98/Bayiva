@@ -21,7 +21,7 @@ new Vue({
                 <a class="nav-link" href="blog.html">Blog</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link text-service dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Servicios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,6 +29,9 @@ new Vue({
                   <a class="dropdown-item" href="../index.html#Proyectos">Servicio Técnico Personalizado </a>
                 
                 </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-tienda" href="tienda.html">Tienda<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../index.html#contacto">Contacto <span class="sr-only">(current)</span></a>
@@ -62,7 +65,7 @@ new Vue({
                 <a class="nav-link" href="..\\blog.html">Blog</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link text-service dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Servicios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,6 +73,9 @@ new Vue({
                   <a class="dropdown-item" href="..\\..\\index.html#Proyectos">Servicio Técnico Personalizado </a>
                   
                 </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-tienda" href="..\\tienda.html">Tienda<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="..\\..\\index.html#contacto">Contacto <span class="sr-only">(current)</span></a>
@@ -91,17 +97,6 @@ new Vue({
             <a class="navbar-brand" href="index.html">
               <img src="img/logo.png" alt="logo-bayiba">
               <strong>Bayiva</strong>.com
-
-              <!--
-              <div class="row">
-                <div class="col-none col-md-6 col-lg-6 text-right">
-                  <img src="img/logo.png" alt="logo-bayiba">
-                </div>
-                <div class="col-none  col-md-6 col-lg-6 text-left">
-                  <strong>Bayiva</strong>.com
-                </div>
-              </div>
-              -->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -116,7 +111,7 @@ new Vue({
                   <a class="nav-link" href="paginas/blog.html">Blog</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link text-service dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Servicios
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -125,6 +120,9 @@ new Vue({
                    
                   </div>
                 </li>
+              <li class="nav-item">
+                <a class="nav-link text-tienda" href="paginas/tienda.html">Tienda<span class="sr-only">(current)</span></a>
+              </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#contacto">Contacto <span class="sr-only">(current)</span></a>
                 </li>

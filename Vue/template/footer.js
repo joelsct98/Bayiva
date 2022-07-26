@@ -134,7 +134,7 @@ new Vue({
         </div>
         <div class="row">
           <div class="col text-center">
-            <span>Bayiva Web &copy; 2020 - All rights reserved</span>
+            <span>Bayiva Web &copy; 2022 - All rights reserved</span>
           </div>
         </div>
       </div>
@@ -273,7 +273,7 @@ new Vue({
         </div>
         <div class="row">
           <div class="col text-center">
-            <span>Bayiva Web &copy; 2020 - All rights reserved</span>
+            <span>Bayiva Web &copy; 2022 - All rights reserved</span>
           </div>
         </div>
       </div>
@@ -412,7 +412,7 @@ new Vue({
           </div>
           <div class="row">
             <div class="col text-center">
-              <span>Bayiva Web &copy; 2020 - All rights reserved</span>
+              <span>Bayiva Web &copy; 2022 - All rights reserved</span>
             </div>
           </div>
         </div>

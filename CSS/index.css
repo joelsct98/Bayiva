@@ -107,19 +107,27 @@ section .container-fluid .row .col-12 h5 a{
 #carousel .overlay .row {
   height: 100%;
 }
-  
-.text-platzi{
-    color:#97c93e !important;
+
+.text-platzi {
+  color: #97c93e !important;
+}
+
+.text-service {
+  color: #49C6D9 !important;
+}
+
+.text-tienda {
+  color: #f89225 !important;
 }
 
 /*Proyectos en el index*/
-#titulo{
+#titulo {
   background-color: black;
 }
 
-#Proyectos .container-fluid .row img{
-  width:100%;
-  max-width:30vh;
+#Proyectos .container-fluid .row img {
+  width: 100%;
+  max-width: 30vh;
   height: 100%;
   max-height:50vh;
 }
@@ -192,7 +200,6 @@ color: white;
 
 #contenido .container .row .col-12 .row .col-12 {  
   color: white;
-
 }
 
 #contenido .container .row .col-12 .row .col-12 a {  
@@ -354,11 +361,20 @@ input[id^='identityMen']{
   color:white;
 }
 
-#footer a{
-  color:white;
-  font-size:10px;
+#footer a {
+  color: white;
+  font-size: 10px;
 }
 
-#footer #icons{
-  font-size:7px;
+#footer #icons {
+  font-size: 7px;
 }
+
+/*-------------------------cards-----------------------*/
+
+.card {
+  width: 22rem;
+  background-color: black;
+  color: white;
+}
+
