@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/template/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/template/navbar.js" afterDir="false" />
     </list>
     <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,19 @@
       <recent name="C:\Users\SEBAS\Desktop\Integracion\Vue\template" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,7 +133,7 @@
       <workItem from="1658791481552" duration="166000" />
       <workItem from="1658794419337" duration="4449000" />
       <workItem from="1658826986648" duration="2147000" />
-      <workItem from="1658831320222" duration="2744000" />
+      <workItem from="1658831320222" duration="4963000" />
     </task>
     <task id="LOCAL-00001" summary="haciendo los comentarios">
       <created>1609188134552</created>
@@ -387,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658831611541</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="cambio de localizacion">
+      <created>1658865028902</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1658865028902</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +430,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="final" />
     <MESSAGE value="Primer commit a producción" />
     <MESSAGE value="develop: empezar a probar con esta base en LOCAL" />
     <MESSAGE value="develop: cambiando variable global de los comentarios" />
@@ -434,7 +454,8 @@
     <MESSAGE value="template footer todos articulos" />
     <MESSAGE value="Cambio de localizacion de proyecto" />
     <MESSAGE value="template footer index.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="template footer index.html" />
+    <MESSAGE value="cambio de localizacion de proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio de localizacion de proyecto" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
