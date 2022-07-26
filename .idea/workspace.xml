@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id">
+      <change afterPath="$PROJECT_DIR$/.2idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.2idea/Integracion.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.2idea/libraries/Spring_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.2idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.2idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.2idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Integracion.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Spring_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectId" id="1m3zAicW4aolp6cZPWwsqm0JED1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vue/template" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="vcs.patch.path" value="$PROJECT_DIR$/../path" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROYECTOS\Integracion\Vue\template" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\CSS" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\img" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas\p_blog" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROYECTOS\Integracion\paginas\p_blog" />
+      <recent name="D:\PROYECTOS\Integracion\paginas\p_blog\articulos" />
+      <recent name="D:\PROYECTOS\Integracion\assets" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas\p_principales" />
+      <recent name="C:\Users\SEBAS\Desktop\Integracion\Vue\template" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="" />
+      <changelist id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
+      <created>1608736920995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608736920995</updated>
+      <workItem from="1608736922111" duration="11025000" />
+      <workItem from="1608754626653" duration="6633000" />
+      <workItem from="1608804190923" duration="6866000" />
+      <workItem from="1608899712978" duration="366000" />
+      <workItem from="1608906756045" duration="1755000" />
+      <workItem from="1608919261358" duration="10935000" />
+      <workItem from="1608988074917" duration="11905000" />
+      <workItem from="1609157567912" duration="18758000" />
+      <workItem from="1609244678252" duration="24910000" />
+      <workItem from="1609331386465" duration="30961000" />
+      <workItem from="1609436013365" duration="2428000" />
+      <workItem from="1609508350382" duration="3008000" />
+      <workItem from="1609694886089" duration="1405000" />
+      <workItem from="1609756449224" duration="15506000" />
+      <workItem from="1609835954084" duration="24380000" />
+      <workItem from="1609941979651" duration="9585000" />
+      <workItem from="1610025714587" duration="2448000" />
+      <workItem from="1610120888149" duration="2425000" />
+      <workItem from="1610187904681" duration="1230000" />
+      <workItem from="1610210398848" duration="4295000" />
+      <workItem from="1610272898998" duration="1195000" />
+      <workItem from="1610304369029" duration="662000" />
+      <workItem from="1612644005658" duration="428000" />
+      <workItem from="1612644491940" duration="612000" />
+      <workItem from="1612810519159" duration="590000" />
+      <workItem from="1614193390486" duration="2891000" />
+      <workItem from="1614360078941" duration="8390000" />
+      <workItem from="1614413531165" duration="25045000" />
+      <workItem from="1617368367636" duration="15926000" />
+      <workItem from="1617453031783" duration="1687000" />
+      <workItem from="1617457004937" duration="8229000" />
+      <workItem from="1617741942917" duration="3710000" />
+      <workItem from="1617910888626" duration="9015000" />
+      <workItem from="1617969691093" duration="7903000" />
+      <workItem from="1618685663557" duration="3283000" />
+      <workItem from="1620477183899" duration="671000" />
+      <workItem from="1627933056096" duration="1664000" />
+      <workItem from="1631531137572" duration="16000" />
+      <workItem from="1658786698897" duration="942000" />
+      <workItem from="1658787715377" duration="3298000" />
+      <workItem from="1658791481552" duration="166000" />
+      <workItem from="1658794419337" duration="4449000" />
+      <workItem from="1658826986648" duration="2147000" />
+    </task>
+    <task id="LOCAL-00001" summary="haciendo los comentarios">
+      <created>1609188134552</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609188134552</updated>
+    </task>
+    <task id="LOCAL-00002" summary="haciendo los comentarios">
+      <created>1609249889982</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609249889982</updated>
+    </task>
+    <task id="LOCAL-00003" summary="terminado la parte de comentarios">
+      <created>1609356446940</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609356446940</updated>
+    </task>
+    <task id="LOCAL-00004" summary="terminado primero version del backend">
+      <created>1609948007114</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609948007114</updated>
+    </task>
+    <task id="LOCAL-00005" summary="final">
+      <created>1610210454392</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610210454392</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Primer commit a producción">
+      <created>1614387937565</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614387937565</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Primer commit a producción">
+      <created>1614389087052</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614389087052</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Primer commit a producción">
+      <created>1614389449879</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614389449879</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Primer commit a producción">
+      <created>1614389898669</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614389898669</updated>
+    </task>
+    <task id="LOCAL-00010" summary="develop: empezar a probar con esta base en LOCAL">
+      <created>1614414969269</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614414969269</updated>
+    </task>
+    <task id="LOCAL-00011" summary="develop: cambiando variable global de los comentarios">
+      <created>1614415289925</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614415289925</updated>
+    </task>
+    <task id="LOCAL-00012" summary="main: cambiando variable global de comentarios">
+      <created>1614415642347</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614415642347</updated>
+    </task>
+    <task id="LOCAL-00013" summary="main: alert a comentarios y likes">
+      <created>1614416755542</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614416755542</updated>
+    </task>
+    <task id="LOCAL-00014" summary="main: comentando los articulos autogenerados en el blog">
+      <created>1614417353420</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614417353420</updated>
+    </task>
+    <task id="LOCAL-00015" summary="limpiar comentario despues de comentar">
+      <created>1614435301833</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614435301833</updated>
+    </task>
+    <task id="LOCAL-00016" summary="limpiar comentario despues de comentar">
+      <created>1614435310308</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614435310308</updated>
+    </task>
+    <task id="LOCAL-00017" summary="controlado los comentarios y limpiado despues de comentar">
+      <created>1614435652632</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614435652632</updated>
+    </task>
+    <task id="LOCAL-00018" summary="controlado los comentarios y limpiado despues de comentar">
+      <created>1614436014084</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1614436014084</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ezquizofrenia hecho">
+      <created>1614457025170</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1614457025170</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ezquizofrenia hecho y cambiado explicacion aburrida en CSS">
+      <created>1614457673038</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1614457673038</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-hecho navegador en blog&#10;-hecho cambios de imagenes en pagina principal&#10;-arreglado algunos fallos">
+      <created>1617378909322</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1617378909322</updated>
+    </task>
+    <task id="LOCAL-00022" summary="-hecho navegador en blog&#10;-hecho cambios de imagenes en pagina principal&#10;-arreglado algunos fallos">
+      <created>1617379466597</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1617379466597</updated>
+    </task>
+    <task id="LOCAL-00023" summary="-hecho navegador en blog&#10;-hecho cambios de imagenes en pagina principal&#10;-arreglado algunos fallos">
+      <created>1617379636040</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617379636040</updated>
+    </task>
+    <task id="LOCAL-00024" summary="-hecho jquery&#10;-y cambiadas variis id">
+      <created>1617384142398</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1617384142398</updated>
+    </task>
+    <task id="LOCAL-00025" summary="arreglando">
+      <created>1617463727078</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1617463727078</updated>
+    </task>
+    <task id="LOCAL-00026" summary="hecho pantallas para youtube y cochesAutonomos.html">
+      <created>1617744770237</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1617744770237</updated>
+    </task>
+    <task id="LOCAL-00027" summary="hecho pantallas para youtube y cochesAutonomos.html">
+      <created>1617745580091</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1617745580091</updated>
+    </task>
+    <task id="LOCAL-00028" summary="completando ambos post">
+      <created>1617917089738</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617917089738</updated>
+    </task>
+    <task id="LOCAL-00029" summary="completando ambos post">
+      <created>1617918689253</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1617918689253</updated>
+    </task>
+    <task id="LOCAL-00030" summary="completando ambos post">
+      <created>1617918954127</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617918954127</updated>
+    </task>
+    <task id="LOCAL-00031" summary="completando ambos post">
+      <created>1617919206868</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617919206868</updated>
+    </task>
+    <task id="LOCAL-00032" summary="movido html del Blog a la carpeta principal">
+      <created>1658796530503</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1658796530503</updated>
+    </task>
+    <task id="LOCAL-00033" summary="hecho template navBar con Vue">
+      <created>1658797552933</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1658797552933</updated>
+    </task>
+    <task id="LOCAL-00034" summary="hecho template navBar con Vue">
+      <created>1658797999367</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1658797999367</updated>
+    </task>
+    <task id="LOCAL-00035" summary="hecho template navBar con Vue para index.html">
+      <created>1658798269008</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1658798269008</updated>
+    </task>
+    <task id="LOCAL-00036" summary="template footer todos articulos">
+      <created>1658828129747</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1658828129747</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="terminado la parte de comentarios" />
+    <MESSAGE value="terminado primero version del backend" />
+    <MESSAGE value="final" />
+    <MESSAGE value="Primer commit a producción" />
+    <MESSAGE value="develop: empezar a probar con esta base en LOCAL" />
+    <MESSAGE value="develop: cambiando variable global de los comentarios" />
+    <MESSAGE value="main: cambiando variable global de comentarios" />
+    <MESSAGE value="main: alert a comentarios y likes" />
+    <MESSAGE value="main: comentando los articulos autogenerados en el blog" />
+    <MESSAGE value="limpiar comentario despues de comentar" />
+    <MESSAGE value="controlado los comentarios y limpiado despues de comentar" />
+    <MESSAGE value="Ezquizofrenia hecho" />
+    <MESSAGE value="Ezquizofrenia hecho y cambiado explicacion aburrida en CSS" />
+    <MESSAGE value="hecho navegador en blog&#10;hecho cambios de imagenes en pagina principal&#10;arreglado algunos fallos" />
+    <MESSAGE value="arreglado fallos comit anterio" />
+    <MESSAGE value="-hecho navegador en blog&#10;-hecho cambios de imagenes en pagina principal&#10;-arreglado algunos fallos" />
+    <MESSAGE value="-hecho jquery&#10;-y cambiadas varias cosas" />
+    <MESSAGE value="-hecho jquery&#10;-y cambiadas variis id" />
+    <MESSAGE value="arreglando" />
+    <MESSAGE value="hecho pantallas para youtube y cochesAutonomos.html" />
+    <MESSAGE value="completando ambos post" />
+    <MESSAGE value="movido html del Blog a la carpeta principal" />
+    <MESSAGE value="hecho template navBar con Vue" />
+    <MESSAGE value="hecho template navBar con Vue para index.html" />
+    <MESSAGE value="template footer todos articulos" />
+    <option name="LAST_COMMIT_MESSAGE" value="template footer todos articulos" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Vue/template/footer.js</url>
+          <line>281</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
