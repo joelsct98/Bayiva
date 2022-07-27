@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id">
+    <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id" />
+    <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vue/template/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/template/navbar.js" afterDir="false" />
     </list>
-    <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -46,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vue/template" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vcs.patch.path" value="$PROJECT_DIR$/../path" />
@@ -54,11 +53,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROYECTOS\Integracion\img" />
       <recent name="D:\PROYECTOS\Integracion\Vue\template" />
       <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas" />
       <recent name="C:\Users\SEBAS\Desktop\Integracion\CSS" />
       <recent name="C:\Users\SEBAS\Desktop\Integracion\img" />
-      <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas\p_blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROYECTOS\Integracion\paginas\p_blog" />
@@ -67,19 +66,6 @@
       <recent name="C:\Users\SEBAS\Desktop\Integracion\paginas\p_principales" />
       <recent name="C:\Users\SEBAS\Desktop\Integracion\Vue\template" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -134,6 +120,7 @@
       <workItem from="1658794419337" duration="4449000" />
       <workItem from="1658826986648" duration="2147000" />
       <workItem from="1658831320222" duration="4963000" />
+      <workItem from="1658914909790" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="haciendo los comentarios">
       <created>1609188134552</created>
