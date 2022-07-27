@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id" />
-    <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="">
+    <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +47,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="vcs.patch.path" value="$PROJECT_DIR$/../path" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -120,7 +123,7 @@
       <workItem from="1658794419337" duration="4449000" />
       <workItem from="1658826986648" duration="2147000" />
       <workItem from="1658831320222" duration="4963000" />
-      <workItem from="1658914909790" duration="614000" />
+      <workItem from="1658914909790" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="haciendo los comentarios">
       <created>1609188134552</created>
@@ -395,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658865028902</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="configuracion ocultas">
+      <created>1658916357520</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1658916357520</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +427,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Primer commit a producción" />
     <MESSAGE value="develop: empezar a probar con esta base en LOCAL" />
     <MESSAGE value="develop: cambiando variable global de los comentarios" />
     <MESSAGE value="main: cambiando variable global de comentarios" />
@@ -442,7 +451,8 @@
     <MESSAGE value="Cambio de localizacion de proyecto" />
     <MESSAGE value="template footer index.html" />
     <MESSAGE value="cambio de localizacion de proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio de localizacion de proyecto" />
+    <MESSAGE value="configuracion ocultas" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuracion ocultas" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
