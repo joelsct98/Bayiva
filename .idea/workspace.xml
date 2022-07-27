@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70b15e29-5115-4171-b7d9-af787524d2bd" name="Default Changelist" comment="-hecho jquery&#10;-y cambiadas variis id">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="0f1f78c3-6a1f-4158-a45f-f11c3d8695d9" name="nocommit" comment="" />
@@ -124,7 +124,7 @@
       <workItem from="1658794419337" duration="4449000" />
       <workItem from="1658826986648" duration="2147000" />
       <workItem from="1658831320222" duration="4963000" />
-      <workItem from="1658914909790" duration="2822000" />
+      <workItem from="1658914909790" duration="4693000" />
     </task>
     <task id="LOCAL-00001" summary="haciendo los comentarios">
       <created>1609188134552</created>
@@ -413,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658917275024</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="configuracion ocultas">
+      <created>1658918376299</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1658918376299</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
